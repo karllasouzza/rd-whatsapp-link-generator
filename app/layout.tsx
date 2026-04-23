@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-import { fontMono, fontSans } from "@/lib/fonts"
+import { fontHeading, fontSans, fontSubtitle } from "@/lib/fonts"
 
 export const metadata: Metadata = {
   title: "Gerador de Link para WhatsApp",
@@ -45,13 +45,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       suppressHydrationWarning
       className={cn(
         "antialiased",
-        fontMono.variable,
+        fontHeading.variable,
         "font-sans",
-        fontSans.variable
+        fontSans.variable,
+        fontSubtitle.variable
       )}
     >
       <body>
