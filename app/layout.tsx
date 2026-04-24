@@ -48,6 +48,7 @@ export default function RootLayout({
       lang="pt-BR"
       suppressHydrationWarning
       className={cn(
+        "flex flex-1",
         "antialiased",
         fontHeading.variable,
         "font-sans",
@@ -55,7 +56,7 @@ export default function RootLayout({
         fontSubtitle.variable
       )}
     >
-      <body>
+      <body className="flex flex-1">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
