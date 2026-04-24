@@ -12,15 +12,17 @@ interface BannerSectionProps {
     className?: string
   }
   className?: string
+  id?: string
 }
 
 export function BannerSection({
   children,
   media,
   className,
+  id,
 }: BannerSectionProps) {
   return (
-    <section className={cn("px-6", className)}>
+    <section id={id} className={cn("px-6", className)}>
       <div className="bg-form-gradient rounded-3xl p-8 lg:grid lg:grid-cols-2 lg:gap-8 lg:p-12">
         <div>{children}</div>
         {media && (
