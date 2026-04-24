@@ -11,9 +11,9 @@ const mainSectionVariants = cva("flex", {
       full: "flex-col items-stretch",
     },
     bg: {
-      primary: "bg-bg-primary",
-      secondary: "bg-bg-secondary",
-      tertiary: "bg-bg-tertiary",
+      primary: "bg-background",
+      secondary: "bg-secondary",
+      tertiary: "bg-tertiary",
     },
   },
   defaultVariants: {
