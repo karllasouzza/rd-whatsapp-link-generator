@@ -3,6 +3,8 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/shared/theme-provider"
 import { cn } from "@/lib/utils"
 import { fontHeading, fontSans, fontSubtitle } from "@/lib/fonts"
+import { Header } from "@/components/shared/header"
+import { Footer } from "@/components/shared/footer"
 
 export const metadata: Metadata = {
   title: "Gerador de Link para WhatsApp",
@@ -57,7 +59,13 @@ export default function RootLayout({
       )}
     >
       <body className="flex flex-1">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <section className="flex flex-1 flex-col">
+            <Header />
+            <main className="min-w-screen flex-1">{children}</main>
+            <Footer />
+          </section>
+        </ThemeProvider>
       </body>
     </html>
   )
