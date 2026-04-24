@@ -1,23 +1,14 @@
-import { BannerSection } from "@/components/shared/banner-section"
-import { HeroForm } from "./components/hero-form"
 import { BenefitsSection } from "./components/benefits-section"
 import { HowToSection } from "./components/how-to-section"
 import { MessageExamplesSection } from "./components/message-examples-section"
 import { FaqSection } from "./components/faq-section"
+import { HeroSection } from "./components/hero-section/hero-section"
 
 export function HomePage() {
   return (
-    <>
+    <div className="flex w-full flex-1 flex-col px-4">
       {/* Hero Banner */}
-      <BannerSection
-        id="gerador"
-        media={{
-          src: "/images/image 3.png",
-          alt: "Pessoa usando WhatsApp no celular",
-        }}
-      >
-        <HeroForm />
-      </BannerSection>
+      <HeroSection />
 
       {/* Benefits */}
       <BenefitsSection />
@@ -30,6 +21,6 @@ export function HomePage() {
 
       {/* FAQ */}
       <FaqSection />
-    </>
+    </div>
   )
 }
