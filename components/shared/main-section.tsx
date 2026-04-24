@@ -23,15 +23,16 @@ const mainSectionVariants = cva("flex", {
 })
 
 interface MainSectionProps
-  extends VariantProps<typeof mainSectionVariants>,
+  extends
+    VariantProps<typeof mainSectionVariants>,
     React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode
 }
 
 export function MainSection({
   children,
-  variant,
-  bg,
+  variant = "full",
+  bg = "primary",
   className,
   id,
   ...props

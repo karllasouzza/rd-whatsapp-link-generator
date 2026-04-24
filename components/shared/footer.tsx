@@ -1,19 +1,17 @@
-import { Typography } from "@/components/ui/typography"
-
 export function Footer() {
   return (
-    <footer className="bg-bg-secondary">
-      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-2 px-6 py-6 text-text-secondary lg:px-20">
+    <footer className="flex w-full items-center justify-center bg-bg-secondary px-6 py-6 lg:px-20">
+      <section className="flex w-max flex-row items-center gap-4">
         <a
           href="#"
-          className="hover:opacity-80 transition-opacity"
+          className="footer-bold text-text-secondary transition-opacity hover:opacity-80"
         >
-          <Typography variant="footer-bold">Política de Privacidade</Typography>
+          Política de Privacidade
         </a>
-        <Typography variant="footer-regular">
+        <span className="footer-regular text-text-secondary">
           © 2023 Resultados Digitais
-        </Typography>
-      </div>
+        </span>
+      </section>
     </footer>
   )
 }
