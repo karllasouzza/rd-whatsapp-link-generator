@@ -40,11 +40,11 @@ export function BenefitsSection() {
             </i>
           </article>
 
-          <aside className="flex flex-col gap-3 text-left">
+          <ul className="flex flex-col gap-3 text-left">
             {BENEFITS.map((benefit, index) => (
               <ChecklistItem key={`benefit-${index}`}>{benefit}</ChecklistItem>
             ))}
-          </aside>
+          </ul>
 
           <Button asChild size="default" className="w-max">
             <a href="#hero-section">

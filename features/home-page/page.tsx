@@ -1,7 +1,7 @@
 import { BenefitsSection } from "./components/benefits-section"
 import { MessagesTemplatesSection } from "./components/messages-templates/message-templates-section"
 import { FaqSection } from "./components/faq-section"
-import { HeroSection } from "./components/hero-section/hero-section"
+import { HeroSection } from "./components/wp-link-generator/wp-link-generator-section"
 import { HowToCreateMessageSection } from "./components/how-to-create-message/how-to-section"
 
 export function HomePage() {
