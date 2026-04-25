@@ -2,16 +2,14 @@ import { cn } from "@/lib/utils"
 
 export interface TextHighlightProps {
   children: React.ReactNode
-  variant?: "cyan" | "lime" | "blue" | "primary"
+  variant?: "cyan" | "lime"
   className?: string
   nowrap?: boolean
 }
 
 const variantColors: Record<string, string> = {
-  cyan: "before:bg-brand-accent-cyan",
-  lime: "before:bg-brand-accent-lime",
-  blue: "before:bg-brand-accent-blue",
-  primary: "before:bg-brand-primary",
+  cyan: "before:bg-brand-6",
+  lime: "before:bg-lime-2",
 }
 
 export function TextHighlight({
@@ -31,9 +29,9 @@ export function TextHighlight({
         } as React.CSSProperties
       }
       className={cn(
-        "relative z-10 inline bg-transparent",
+        "relative z-10 inline bg-transparent px-2",
         "before:absolute before:inset-x-0 before:bottom-0 before:h-1/2",
-        "before:-z-10 before:rounded-full",
+        "before:-z-10 before:rounded-md",
         "before:content-['']",
         highlightColor,
         nowrap && "whitespace-nowrap",

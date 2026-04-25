@@ -86,7 +86,7 @@ export function FaqSection() {
             <AccordionItem
               key={item.id}
               value={item.id}
-              className="w-full border-brand-accent-cyan py-6"
+              className="w-full border-brand-5 py-6"
             >
               <AccordionTrigger>{item.question}</AccordionTrigger>
               <AccordionContent className="pr-11 text-left text-foreground">

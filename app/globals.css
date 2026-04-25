@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -15,15 +14,14 @@
   --font-sans: var(--font-sans);
   --font-subtitle: var(--font-subtitle);
 
-  /* Brand Colors */
-  --color-brand-primary: oklch(32.5% 0.075 234.5);
-  --color-brand-accent-blue: oklch(42.5% 0.115 234.5);
-  --color-brand-accent-cyan: oklch(85% 0.12 220);
-  --color-brand-accent-lime: oklch(90% 0.22 120);
-  --color-brand-accent-purple: oklch(55% 0.25 290);
-
-  /* Custom Surface */
-  --color-tertiary: oklch(98% 0.005 250);
+  /* Colors Palette */
+  --color-lime-2: oklch(90.5% 0.216 123.9);
+  --color-purple-4: oklch(53.2% 0.287 298);
+  --color-brand-2: oklch(34.3% 0.077 239.1);
+  --color-brand-3: oklch(44.6% 0.103 240.3);
+  --color-brand-4: oklch(69.9% 0.138 229.1);
+  --color-brand-5: oklch(80.4% 0.146 219.5);
+  --color-brand-6: oklch(89% 0.107 207.3);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -111,6 +109,9 @@
 }
 
 @layer components {
+  .heading-xl {
+    @apply font-heading text-[3rem] leading-[1.4] font-bold;
+  }
   .heading-md {
     @apply font-heading text-[2rem] leading-[1.4] font-bold;
   }

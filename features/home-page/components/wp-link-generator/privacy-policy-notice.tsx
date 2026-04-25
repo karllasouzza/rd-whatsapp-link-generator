@@ -11,7 +11,7 @@ export function PrivacyPolicyNotice() {
           href="https://legal.rdstation.com/pt/privacy-policy/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground underline hover:text-accent"
+          className="text-foreground underline hover:text-brand-3"
         >
           Política de Privacidade
         </a>

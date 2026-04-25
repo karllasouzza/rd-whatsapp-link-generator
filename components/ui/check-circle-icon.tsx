@@ -7,11 +7,9 @@ import { cn } from "@/lib/utils"
 export const checkCircleVariants = cva("shrink-0", {
   variants: {
     variant: {
-      cyan: "text-brand-accent-cyan",
-      lime: "text-brand-accent-lime",
-      blue: "text-brand-accent-blue",
-      primary: "text-brand-primary",
-      purple: "text-brand-accent-purple",
+      cyan: "text-brand-5",
+      lime: "text-lime-2",
+      purple: "text-purple-4",
     },
   },
   defaultVariants: {
@@ -20,7 +18,8 @@ export const checkCircleVariants = cva("shrink-0", {
 })
 
 interface CheckCircleIconProps
-  extends Omit<React.ComponentProps<"svg">, "color">,
+  extends
+    Omit<React.ComponentProps<"svg">, "color">,
     VariantProps<typeof checkCircleVariants> {
   size?: number
   color?: string
