@@ -1,4 +1,4 @@
-import { ChecklistItem } from "../../../../components/ui/checklist-item"
+import { ChecklistItem } from "@/components/ui/checklist-item"
 
 const HOW_TO_CREATE_TIPS = [
   "Deixe bem claro de qual empresa se trata, mencione o nome do seu negócio logo na mensagem para reforçar a identificação com a marca.",

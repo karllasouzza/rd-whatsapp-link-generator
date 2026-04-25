@@ -55,11 +55,7 @@
       rgba(195, 246, 40, 0.2) 0%,
       rgba(241, 243, 245, 0.2) 100%
     ),
-    radial-gradient(
-      31.29% 53.63% at 0% 65.34%,
-      #7befff 0%,
-      #f1f3f5 100%
-    ),
+    radial-gradient(31.29% 53.63% at 0% 65.34%, #7befff 0%, #f1f3f5 100%),
     #f1f3f5;
 }
 
@@ -124,7 +120,7 @@
   .body-lg-bold {
     @apply font-sans text-xl leading-[1.4] font-bold tracking-[-0.02em];
   }
-    .body-lg {
+  .body-lg {
     @apply font-sans text-xl leading-[1.4] font-normal tracking-[-0.02em];
   }
   .body-md {
