@@ -1,7 +1,7 @@
-import { SectionHeading } from "@/components/ui/section-heading"
 import { MainSection } from "@/components/shared/main-section"
 import { Button } from "@/components/ui/button"
-import { MessageExampleCard } from "./message-example-card"
+import { ArrowRight } from "lucide-react"
+import { MessageTemplatesSectionCard } from "./messages-templates/message-templates-section-card"
 
 const examples = [
   {
@@ -23,28 +23,34 @@ const examples = [
 
 export function MessageExamplesSection() {
   return (
-    <MainSection variant="centered" bg="primary" id="exemplos">
-      <div className="flex flex-col gap-8">
-        <SectionHeading highlight="mensagem para WhatsApp">
+    <MainSection
+      variant="centered"
+      bg="primary"
+      id="exemplos"
+      className="py-16 flex flex-col gap-8"
+    >
+      <header className="mb-6 flex flex-col gap-2">
+        <h1 className="heading-md text-center text-foreground">
           Exemplos de mensagem para WhatsApp
-        </SectionHeading>
+        </h1>
+      </header>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {examples.map((example) => (
-            <MessageExampleCard
-              key={example.title}
-              title={example.title}
-              message={example.message}
-            />
-          ))}
-        </div>
+      <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {examples.map((example) => (
+          <MessageTemplatesSectionCard
+            key={example.title}
+            title={example.title}
+            message={example.message}
+          />
+        ))}
+      </section>
 
-        <div className="flex justify-center">
-          <Button asChild size="lg">
-            <a href="#gerador">Gere seu link grátis</a>
-          </Button>
-        </div>
-      </div>
+      <Button asChild size="default">
+        <a href="#gerador">
+          Gere seu link grátis
+          <ArrowRight className="size-4" />
+        </a>
+      </Button>
     </MainSection>
   )
 }

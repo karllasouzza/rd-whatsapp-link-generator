@@ -1,12 +1,12 @@
 import { BenefitsSection } from "./components/benefits-section"
-import { HowToSection } from "./components/how-to-section"
-import { MessageExamplesSection } from "./components/message-examples-section"
+import { MessagesTemplatesSection } from "./components/messages-templates/message-templates-section"
 import { FaqSection } from "./components/faq-section"
 import { HeroSection } from "./components/hero-section/hero-section"
+import { HowToCreateMessageSection } from "./components/how-to-create-message/how-to-section"
 
 export function HomePage() {
   return (
-    <div className="flex w-full flex-1 flex-col px-4">
+    <main className="flex w-full flex-1 flex-col overflow-hidden">
       {/* Hero Banner */}
       <HeroSection />
 
@@ -14,13 +14,13 @@ export function HomePage() {
       <BenefitsSection />
 
       {/* How-to */}
-      <HowToSection />
+      <HowToCreateMessageSection />
 
       {/* Message Examples */}
-      <MessageExamplesSection />
+      <MessagesTemplatesSection />
 
       {/* FAQ */}
       <FaqSection />
-    </div>
+    </main>
   )
 }

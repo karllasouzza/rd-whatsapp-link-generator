@@ -1,25 +1,38 @@
-import * as React from "react"
-import { CircleCheck } from "lucide-react"
+"use client"
+
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
+import {
+  CheckCircleIcon,
+  type checkCircleVariants,
+} from "@/components/ui/check-circle-icon"
 
-interface ChecklistItemProps extends React.ComponentProps<"div"> {
+interface ChecklistItemProps
+  extends React.ComponentProps<"li">, VariantProps<typeof checkCircleVariants> {
   children: React.ReactNode
+  iconSize?: number
+  textClassName?: string
 }
 
 export function ChecklistItem({
   children,
   className,
+  variant = "cyan",
+  iconSize = 20,
+  textClassName,
   ...props
 }: ChecklistItemProps) {
   return (
-    <div
+    <li
       data-slot="checklist-item"
-      className={cn("flex items-start gap-3", className)}
+      className={cn("flex flex-row items-center gap-3", className)}
       {...props}
     >
-      <CircleCheck className="mt-0.5 size-5 shrink-0 text-brand-accent-lime" />
-      <span className="body-sm text-text-secondary">{children}</span>
-    </div>
+      <CheckCircleIcon variant={variant} size={iconSize} />
+      <p className={cn("body-sm p-0 text-foreground", textClassName)}>
+        {children}
+      </p>
+    </li>
   )
 }
