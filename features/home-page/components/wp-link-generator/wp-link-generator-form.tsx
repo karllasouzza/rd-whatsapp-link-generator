@@ -10,6 +10,7 @@ import { ArrowRight } from "lucide-react"
 
 import { useWpLinkGeneratorForm } from "../../hooks/use-wp-link-generator-form"
 import { WpLinkGeneratorRoleSelect } from "./wp-link-generator-role-select"
+import { PrivacyPolicyNotice } from "./privacy-policy-notice"
 
 export function WpLinkGeneratorForm() {
   const { form, generateLink, isSubmitting, submitError, phoneMask } =
@@ -19,10 +20,10 @@ export function WpLinkGeneratorForm() {
     <form
       onSubmit={form.handleSubmit(generateLink)}
       noValidate
-      className="flex flex-col gap-6"
+      className="grid w-full grid-flow-row grid-cols-2 gap-6"
     >
       {/* WhatsApp Number */}
-      <fieldset className="flex flex-col gap-2">
+      <fieldset className="col-start-1 col-end-3 flex w-full flex-col gap-2 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2">
         <Label
           htmlFor="whatsapp"
           className="body-sm-bold text-secondary-foreground"
@@ -63,7 +64,7 @@ export function WpLinkGeneratorForm() {
       </fieldset>
 
       {/* Name */}
-      <fieldset className="flex flex-col gap-2">
+      <fieldset className="col-start-1 col-end-3 flex flex-col gap-2 lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2">
         <Label
           htmlFor="name"
           className="body-sm-bold text-secondary-foreground"
@@ -97,7 +98,7 @@ export function WpLinkGeneratorForm() {
       <WpLinkGeneratorRoleSelect control={form.control} />
 
       {/* Default Message */}
-      <fieldset className="flex flex-col gap-2">
+      <fieldset className="col-start-1 col-end-3 flex flex-col gap-2">
         <Label
           htmlFor="message"
           className="body-sm-bold text-secondary-foreground"
@@ -128,34 +129,19 @@ export function WpLinkGeneratorForm() {
       </fieldset>
 
       {submitError && (
-        <p className="caption text-center text-destructive">{submitError}</p>
+        <p className="caption col-start-1 col-end-3 text-center text-destructive">
+          {submitError}
+        </p>
       )}
 
-      {/* Privacy Policy */}
-      <aside className="mt-2 flex flex-col items-center">
-        <span className="caption text-center text-foreground">
-          Ao preencher o formulário, concordo * em receber comunicações de
-          acordo com meus interesses. Ao informar meus dados, eu concordo com a{" "}
-          <a
-            href="https://legal.rdstation.com/pt/privacy-policy/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground underline hover:text-accent"
-          >
-            Política de Privacidade
-          </a>
-        </span>
-        <p className="caption text-center text-foreground">
-          * Você pode alterar suas permissões de comunicação a qualquer tempo.
-        </p>
-      </aside>
+      <PrivacyPolicyNotice />
 
       {/* Submit */}
       <Button
         type="submit"
         variant="default"
         size="default"
-        className="body-sm-semibold! z-20 mx-auto mt-2 w-max"
+        className="body-sm-semibold! z-20 col-start-1 col-end-3 mx-auto mt-2 w-max"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Gerando..." : "Gerar link grátis"}
