@@ -6,7 +6,7 @@ import { HowToCreateMessageSection } from "./components/how-to-create-message/ho
 
 export function HomePage() {
   return (
-    <main className="flex w-full flex-1 flex-col overflow-hidden">
+    <main className="flex w-full flex-1 flex-col overflow-hidden box-border">
       {/* Hero Banner */}
       <HeroSection />
 
