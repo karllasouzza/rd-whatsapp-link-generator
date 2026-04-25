@@ -1,7 +1,6 @@
-import { MainSection } from "@/components/shared/main-section"
 import { Button } from "@/components/ui/button"
-import { MessageTemplatesSectionCard } from "./message-templates-section-card"
 import { ArrowRight } from "lucide-react"
+import { MessageTemplatesCard } from "./message-templates-card"
 
 const MESSAGES_TEMPLATES = [
   {
@@ -23,7 +22,7 @@ const MESSAGES_TEMPLATES = [
 
 export function MessagesTemplatesSection() {
   return (
-    <section className="flex items-center justify-center w-full bg-secondary">
+    <section className="flex w-full items-center justify-center bg-secondary">
       <main className="flex max-w-300 flex-col gap-8 px-6 py-16 md:px-12 lg:px-20">
         <header className="mb-6 flex flex-col gap-2">
           <h3 className="heading-md text-center text-foreground">
@@ -31,15 +30,15 @@ export function MessagesTemplatesSection() {
           </h3>
         </header>
 
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {MESSAGES_TEMPLATES.map((example) => (
-            <MessageTemplatesSectionCard
+            <MessageTemplatesCard
               key={example.title}
               title={example.title}
               message={example.message}
             />
           ))}
-        </section>
+        </ul>
 
         <Button asChild size="default" className="mx-auto w-max">
           <a href="#hero-section">

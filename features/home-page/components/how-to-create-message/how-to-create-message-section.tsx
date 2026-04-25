@@ -1,4 +1,4 @@
-import { HowToCreateCheckedList } from "./how-to-create-checked-list"
+import { HowToCreateMessageCheckedList } from "./how-to-create-checked-list";
 
 export function HowToCreateMessageSection() {
   return (
@@ -17,7 +17,7 @@ export function HowToCreateMessageSection() {
           </p>
         </header>
 
-        <HowToCreateCheckedList />
+        <HowToCreateMessageCheckedList />
       </main>
     </section>
   )

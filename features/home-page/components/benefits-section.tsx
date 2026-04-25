@@ -1,4 +1,4 @@
-import { ChecklistItem } from "./checklist-item"
+import { ChecklistItem } from "../../../components/ui/checklist-item"
 import { TextHighlight } from "@/components/ui/text-highlight"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
