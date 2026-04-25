@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <footer className="flex w-full items-center justify-center bg-secondary px-6 py-6 lg:px-20">
-      <section className="flex w-max flex-row items-center gap-4">
+    <footer className="flex w-full h-14 items-center justify-center bg-muted p-5 lg:px-20">
+      <section className="flex w-max flex-row items-center gap-2 sm:gap-4">
         <a
           href="https://legal.rdstation.com/pt/privacy-policy/"
           target="_blank"

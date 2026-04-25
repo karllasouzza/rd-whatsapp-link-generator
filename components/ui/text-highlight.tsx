@@ -4,41 +4,49 @@ export interface TextHighlightProps {
   children: React.ReactNode
   variant?: "cyan" | "lime" | "blue" | "primary"
   className?: string
+  /** Se true, impede quebra de linha dentro do highlight */
+  nowrap?: boolean
+}
+
+const variantColors: Record<string, string> = {
+  cyan: "before:bg-brand-accent-cyan",
+  lime: "before:bg-brand-accent-lime",
+  blue: "before:bg-brand-accent-blue",
+  primary: "before:bg-brand-primary",
 }
 
 /**
- * TextHighlight component for displaying text with colored background highlights.
+ * TextHighlight com marca-texto na base usando ::before.
+ * O pseudo-elemento (pill arredondado) inicia na metade do texto
+ * e fica parcialmente atrás dele, escondendo a curva superior.
  *
- * @example
- * // Basic usage with cyan highlight
- * <TextHighlight variant="cyan">Gerador de link de</TextHighlight>
- *
- * @example
- * // Lime highlight variant
- * <TextHighlight variant="lime">WhatsApp</TextHighlight>
- *
- * @example
- * // Custom className
- * <TextHighlight variant="blue" className="font-bold">Custom text</TextHighlight>
+ * box-decoration-break: clone garante que, se o texto quebrar linha,
+ * cada fragmento receba seu próprio marcador.
  */
 export function TextHighlight({
   children,
   variant = "cyan",
   className,
+  nowrap = false,
 }: TextHighlightProps) {
-  const variantStyles = {
-    cyan: "after:bg-brand-accent-cyan",
-    lime: "after:bg-brand-accent-lime",
-    blue: "after:bg-brand-accent-blue",
-    primary: "after:bg-brand-primary",
-  }
+  const highlightColor = variantColors[variant]
 
   return (
     <span
+      style={
+        {
+          boxDecorationBreak: "clone",
+          WebkitBoxDecorationBreak: "clone",
+        } as React.CSSProperties
+      }
       className={cn(
-        "relative z-10 inline",
-        "after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-1/2 after:rounded-md after:-z-10",
-        variantStyles[variant],
+        "relative z-10 inline bg-transparent px-[0.3em]",
+        "before:absolute before:top-[0.55em] before:bottom-[0.05em]",
+        "before:right-[0.3em] before:left-[0.3em]",
+        "before:-z-10 before:rounded-full",
+        "before:content-['']",
+        highlightColor,
+        nowrap && "whitespace-nowrap",
         className
       )}
     >

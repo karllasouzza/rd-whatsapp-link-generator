@@ -43,16 +43,16 @@ export function MainSection({
       className={cn(mainSectionVariants({ bg }), className)}
       {...props}
     >
-      <div
+      <aside
         className={cn(
-          "mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-6 py-14 md:px-12 lg:px-[120px] lg:py-20",
+          "mx-auto flex w-full max-w-300 flex-col gap-10 px-6 md:px-12 lg:px-[120px]",
           variant === "split" && "lg:grid lg:grid-cols-2",
           variant === "centered" && "items-center text-center",
           variant === "full" && "items-stretch"
         )}
       >
         {children}
-      </div>
+      </aside>
     </section>
   )
 }
