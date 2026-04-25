@@ -8,7 +8,7 @@ import type { Cargo } from "../lib/cargo-options"
 import { submitForm } from "../lib/submit-form"
 import { usePhoneMask } from "./use-phone-mask"
 
-export function useWhatsappForm() {
+export function useWpLinkGeneratorForm() {
   const [generatedLink, setGeneratedLink] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
