@@ -14,6 +14,7 @@
   --color-brand-accent-blue: oklch(42.5% 0.115 234.5);
   --color-brand-accent-cyan: oklch(85% 0.12 220);
   --color-brand-accent-lime: oklch(90% 0.22 120);
+  --color-brand-accent-purple: oklch(55% 0.25 290);
 
   /* Custom Surface */
   --color-tertiary: oklch(98% 0.005 250);
@@ -107,6 +108,9 @@
   .heading-md {
     @apply font-heading text-[2rem] leading-[1.4] font-bold;
   }
+  .heading-base {
+    @apply font-heading text-[1.5rem] leading-[1.4] font-bold;
+  }
   .heading-xs {
     @apply font-heading text-xl leading-[1.4] font-bold;
   }
@@ -115,6 +119,9 @@
   }
   .body-lg-bold {
     @apply font-sans text-xl leading-[1.4] font-bold tracking-[-0.02em];
+  }
+    .body-lg {
+    @apply font-sans text-xl leading-[1.4] font-normal tracking-[-0.02em];
   }
   .body-md {
     @apply font-sans text-lg leading-[1.4] font-normal;
