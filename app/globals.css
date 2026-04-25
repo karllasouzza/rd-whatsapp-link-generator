@@ -5,6 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* breakpoints */
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
+  --breakpoint-xl: 1920px;
+
   --font-heading: var(--font-heading);
   --font-sans: var(--font-sans);
   --font-subtitle: var(--font-subtitle);

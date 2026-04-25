@@ -1,14 +1,14 @@
 import { BenefitsSection } from "./components/benefits/benefits-section"
 import { MessagesTemplatesSection } from "./components/messages-templates/message-templates-section"
 import { FaqSection } from "./components/faq-section"
-import { HeroSection } from "./components/wp-link-generator/wp-link-generator-section"
+import { WpLinkGeneratorSection } from "./components/wp-link-generator/wp-link-generator-section"
 import { HowToCreateMessageSection } from "./components/how-to-create-message/how-to-create-message-section"
 
 export function HomePage() {
   return (
     <main className="flex w-full flex-1 flex-col overflow-hidden box-border">
       {/* Hero Banner */}
-      <HeroSection />
+      <WpLinkGeneratorSection />
 
       {/* Benefits */}
       <BenefitsSection />

@@ -1,7 +1,9 @@
 "use client"
 
-import { Controller, type Control } from "react-hook-form"
-import { Label } from "@/components/ui/label"
+import type {
+  ControllerFieldState,
+  ControllerRenderProps,
+} from "react-hook-form"
 import {
   Select,
   SelectContent,
@@ -13,47 +15,31 @@ import { CARGO_OPTIONS } from "../../lib/cargo-options"
 import type { FormData } from "../../lib/form-schema"
 
 interface FormSelectWithLabelProps {
-  control: Control<FormData>
+  field: ControllerRenderProps<FormData, "role">
+  fieldState: ControllerFieldState
 }
 
 export function WpLinkGeneratorRoleSelect({
-  control,
+  field,
+  fieldState,
 }: FormSelectWithLabelProps) {
   return (
-    <fieldset className="flex w-full min-w-0 flex-col gap-2 col-start-1 col-end-3">
-      <Label htmlFor="role" className="body-sm-bold text-secondary-foreground">
-        Cargo
-      </Label>
-      <Controller
-        name="role"
-        control={control}
-        render={({ field, fieldState }) => (
-          <>
-            <Select value={field.value || ""} onValueChange={field.onChange}>
-              <SelectTrigger
-                id="role"
-                aria-invalid={fieldState.invalid}
-                aria-describedby={fieldState.invalid ? "role-error" : undefined}
-                className="w-full bg-background"
-              >
-                <SelectValue placeholder="Selecione seu cargo" />
-              </SelectTrigger>
-              <SelectContent>
-                {CARGO_OPTIONS.map((option, i) => (
-                  <SelectItem key={`option-${i}`} value={option}>
-                    {option}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            {fieldState.invalid && fieldState.error?.message && (
-              <p id="role-error" className="caption text-destructive">
-                {fieldState.error.message}
-              </p>
-            )}
-          </>
-        )}
-      />
-    </fieldset>
+    <Select value={field.value || ""} onValueChange={field.onChange}>
+      <SelectTrigger
+        id="role"
+        aria-invalid={fieldState.invalid}
+        aria-describedby={fieldState.invalid ? "role-error" : undefined}
+        className="w-full bg-background"
+      >
+        <SelectValue placeholder="Selecione seu cargo" />
+      </SelectTrigger>
+      <SelectContent>
+        {CARGO_OPTIONS.map((option, i) => (
+          <SelectItem key={`option-${i}`} value={option}>
+            {option}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   )
 }
