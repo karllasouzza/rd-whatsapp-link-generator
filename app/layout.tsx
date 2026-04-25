@@ -58,11 +58,13 @@ export default function RootLayout({
         fontSubtitle.variable
       )}
     >
-      <body className="flex flex-1">
+      <body className="flex flex-1 h-screen overflow-hidden overflow-y-auto">
         <ThemeProvider>
-          <section className="flex flex-1 flex-col">
+          <section className="flex w-screen flex-1 flex-col">
             <Header />
-            <main className="min-w-screen flex-1">{children}</main>
+            <main className="h-max w-screen flex-1 ">
+              {children}
+            </main>
             <Footer />
           </section>
         </ThemeProvider>
