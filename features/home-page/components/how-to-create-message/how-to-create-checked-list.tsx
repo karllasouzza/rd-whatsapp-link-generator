@@ -1,0 +1,24 @@
+import { ChecklistItem } from "../checklist-item"
+
+const HOW_TO_CREATE_TIPS = [
+  "Deixe bem claro de qual empresa se trata, mencione o nome do seu negócio logo na mensagem para reforçar a identificação com a marca.",
+  "Informe claramente os próximos passos para evitar ansiedade. Por exemplo, um vendedor entrará em contato? Quanto tempo isso demora?",
+  "Faça uma comunicação humanizada, ou seja, escreva como você estivesse falando com outra pessoa (até porque, está mesmo!), seguindo os padrões da sua marca.",
+]
+export function HowToCreateCheckedList() {
+  return (
+    <ul className="flex flex-col gap-12 text-left lg:flex-row">
+      {HOW_TO_CREATE_TIPS.map((tip, index) => (
+        <ChecklistItem
+          variant="purple"
+          key={`tip-${index}`}
+          iconSize={32}
+          className="items-start gap-3 lg:flex-col lg:items-center"
+          textClassName="body-lg! lg:text-center"
+        >
+          {tip}
+        </ChecklistItem>
+      ))}
+    </ul>
+  )
+}
