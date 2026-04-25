@@ -1,7 +1,6 @@
 "use client"
 
 import { Controller } from "react-hook-form"
-import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,12 +8,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { ArrowRight } from "lucide-react"
 
-import { useWhatsappForm } from "../../hooks/use-whatsapp-form"
-import { FormSelectWithLabel } from "./form-select"
+import { useWpLinkGeneratorForm } from "../../hooks/use-wp-link-generator-form"
+import { WpLinkGeneratorRoleSelect } from "./wp-link-generator-role-select"
 
-export function WhatsAppForm() {
+export function WpLinkGeneratorForm() {
   const { form, generateLink, isSubmitting, submitError, phoneMask } =
-    useWhatsappForm()
+    useWpLinkGeneratorForm()
 
   return (
     <form
@@ -24,7 +23,10 @@ export function WhatsAppForm() {
     >
       {/* WhatsApp Number */}
       <div className="flex flex-col gap-2">
-        <Label htmlFor="whatsapp" className="body-sm-bold text-secondary-foreground">
+        <Label
+          htmlFor="whatsapp"
+          className="body-sm-bold text-secondary-foreground"
+        >
           Número do WhatsApp
         </Label>
         <Controller
@@ -62,7 +64,10 @@ export function WhatsAppForm() {
 
       {/* Name */}
       <div className="flex flex-col gap-2">
-        <Label htmlFor="name" className="body-sm-bold text-secondary-foreground">
+        <Label
+          htmlFor="name"
+          className="body-sm-bold text-secondary-foreground"
+        >
           Nome
         </Label>
         <Controller
@@ -89,11 +94,14 @@ export function WhatsAppForm() {
       </div>
 
       {/* Role */}
-      <FormSelectWithLabel control={form.control} />
+      <WpLinkGeneratorRoleSelect control={form.control} />
 
       {/* Default Message */}
       <div className="flex flex-col gap-2">
-        <Label htmlFor="message" className="body-sm-bold text-secondary-foreground">
+        <Label
+          htmlFor="message"
+          className="body-sm-bold text-secondary-foreground"
+        >
           Mensagem padrão (opcional)
         </Label>
         <Controller

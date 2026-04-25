@@ -16,9 +16,11 @@ interface FormSelectWithLabelProps {
   control: Control<FormData>
 }
 
-export function FormSelectWithLabel({ control }: FormSelectWithLabelProps) {
+export function WpLinkGeneratorRoleSelect({
+  control,
+}: FormSelectWithLabelProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <fieldset className="flex flex-col gap-2">
       <Label htmlFor="role" className="body-sm-bold text-secondary-foreground">
         Cargo
       </Label>
@@ -52,6 +54,6 @@ export function FormSelectWithLabel({ control }: FormSelectWithLabelProps) {
           </>
         )}
       />
-    </div>
+    </fieldset>
   )
 }
