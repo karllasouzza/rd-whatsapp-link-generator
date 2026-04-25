@@ -20,7 +20,7 @@ export function WpLinkGeneratorRoleSelect({
   control,
 }: FormSelectWithLabelProps) {
   return (
-    <fieldset className="flex flex-col gap-2">
+    <fieldset className="flex w-full min-w-0 flex-col gap-2 col-start-1 col-end-3">
       <Label htmlFor="role" className="body-sm-bold text-secondary-foreground">
         Cargo
       </Label>
@@ -34,11 +34,11 @@ export function WpLinkGeneratorRoleSelect({
                 id="role"
                 aria-invalid={fieldState.invalid}
                 aria-describedby={fieldState.invalid ? "role-error" : undefined}
-                className="min-h-11.75 w-full bg-background"
+                className="w-full bg-background"
               >
                 <SelectValue placeholder="Selecione seu cargo" />
               </SelectTrigger>
-              <SelectContent align="end">
+              <SelectContent>
                 {CARGO_OPTIONS.map((option, i) => (
                   <SelectItem key={`option-${i}`} value={option}>
                     {option}
