@@ -1,4 +1,4 @@
-import { BenefitsSection } from "./components/benefits-section"
+import { BenefitsSection } from "./components/benefits/benefits-section"
 import { MessagesTemplatesSection } from "./components/messages-templates/message-templates-section"
 import { FaqSection } from "./components/faq-section"
 import { HeroSection } from "./components/wp-link-generator/wp-link-generator-section"
