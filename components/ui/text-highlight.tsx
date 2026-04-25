@@ -14,14 +14,6 @@ const variantColors: Record<string, string> = {
   primary: "before:bg-brand-primary",
 }
 
-/**
- * TextHighlight com marca-texto na base usando ::before.
- * O pseudo-elemento (pill arredondado) inicia na metade do texto
- * e fica parcialmente atrás dele, escondendo a curva superior.
- *
- * box-decoration-break: clone garante que, se o texto quebrar linha,
- * cada fragmento receba seu próprio marcador.
- */
 export function TextHighlight({
   children,
   variant = "cyan",
