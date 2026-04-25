@@ -49,14 +49,18 @@
 }
 
 .bg-form-gradient {
-  background-color: oklch(95% 0.005 250);
-  background-image:
+  background:
     radial-gradient(
-      circle at 100% 44%,
-      oklch(90% 0.22 120) 0%,
-      transparent 100%
+      29.71% 69.22% at 100% 43.65%,
+      rgba(195, 246, 40, 0.2) 0%,
+      rgba(241, 243, 245, 0.2) 100%
     ),
-    radial-gradient(circle at 0% 65%, oklch(85% 0.12 220) 0%, transparent 100%);
+    radial-gradient(
+      31.29% 53.63% at 0% 65.34%,
+      #7befff 0%,
+      #f1f3f5 100%
+    ),
+    #f1f3f5;
 }
 
 :root {

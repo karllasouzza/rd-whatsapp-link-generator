@@ -8,7 +8,7 @@ export function HeroSection() {
     <section className="flex items-center justify-center px-4">
       <main className="bg-form-gradient relative w-full max-w-full overflow-hidden rounded-2xl p-6 pt-12 md:p-8">
         <header className="mb-6 flex flex-col gap-4">
-          <h1 className="heading-md text-center font-medium text-foreground">
+          <h1 className="heading-md text-center text-foreground">
             Gerador de Link para WhatsApp
           </h1>
           <p className="body-sm text-center text-foreground">

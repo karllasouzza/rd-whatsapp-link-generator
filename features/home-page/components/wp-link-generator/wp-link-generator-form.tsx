@@ -22,7 +22,7 @@ export function WpLinkGeneratorForm() {
       className="flex flex-col gap-6"
     >
       {/* WhatsApp Number */}
-      <div className="flex flex-col gap-2">
+      <fieldset className="flex flex-col gap-2">
         <Label
           htmlFor="whatsapp"
           className="body-sm-bold text-secondary-foreground"
@@ -41,8 +41,8 @@ export function WpLinkGeneratorForm() {
               value={phoneMask.maskedValue}
               onChange={(e) => {
                 const digits = e.target.value.replace(/\D/g, "")
-                phoneMask.setValue(digits)
-                field.onChange(e.target.value)
+                const masked = phoneMask.setValue(digits)
+                field.onChange(masked)
               }}
               onBlur={(e) => {
                 field.onBlur()
@@ -60,10 +60,10 @@ export function WpLinkGeneratorForm() {
             {form.formState.errors.whatsapp.message}
           </p>
         )}
-      </div>
+      </fieldset>
 
       {/* Name */}
-      <div className="flex flex-col gap-2">
+      <fieldset className="flex flex-col gap-2">
         <Label
           htmlFor="name"
           className="body-sm-bold text-secondary-foreground"
@@ -91,13 +91,13 @@ export function WpLinkGeneratorForm() {
             {form.formState.errors.name.message}
           </p>
         )}
-      </div>
+      </fieldset>
 
       {/* Role */}
       <WpLinkGeneratorRoleSelect control={form.control} />
 
       {/* Default Message */}
-      <div className="flex flex-col gap-2">
+      <fieldset className="flex flex-col gap-2">
         <Label
           htmlFor="message"
           className="body-sm-bold text-secondary-foreground"
@@ -125,15 +125,15 @@ export function WpLinkGeneratorForm() {
             {form.formState.errors.message.message}
           </p>
         )}
-      </div>
+      </fieldset>
 
       {submitError && (
         <p className="caption text-center text-destructive">{submitError}</p>
       )}
 
       {/* Privacy Policy */}
-      <div className="mt-2 flex flex-col items-center">
-        <p className="caption text-center text-foreground">
+      <aside className="mt-2 flex flex-col items-center">
+        <span className="caption text-center text-foreground">
           Ao preencher o formulário, concordo * em receber comunicações de
           acordo com meus interesses. Ao informar meus dados, eu concordo com a{" "}
           <a
@@ -144,11 +144,11 @@ export function WpLinkGeneratorForm() {
           >
             Política de Privacidade
           </a>
-        </p>
+        </span>
         <p className="caption text-center text-foreground">
           * Você pode alterar suas permissões de comunicação a qualquer tempo.
         </p>
-      </div>
+      </aside>
 
       {/* Submit */}
       <Button

@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { MainSection } from "@/components/shared/main-section"
 import {
   Accordion,
   AccordionContent,
@@ -56,7 +55,7 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="flex w-full items-center justify-center">
-      <main className="flex max-w-300 w-full flex-col gap-10 px-6 py-20 md:px-12 lg:px-20">
+      <main className="flex w-full max-w-300 flex-col gap-10 px-6 py-20 md:px-12 lg:px-20">
         <header className="flex w-full flex-col gap-4">
           <Button
             variant="outline"
@@ -87,7 +86,7 @@ export function FaqSection() {
             <AccordionItem
               key={item.id}
               value={item.id}
-              className="border-brand-accent-cyan py-6 w-full"
+              className="w-full border-brand-accent-cyan py-6"
             >
               <AccordionTrigger>{item.question}</AccordionTrigger>
               <AccordionContent className="pr-11 text-left text-foreground">
