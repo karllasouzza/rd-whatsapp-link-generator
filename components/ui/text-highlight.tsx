@@ -4,7 +4,6 @@ export interface TextHighlightProps {
   children: React.ReactNode
   variant?: "cyan" | "lime" | "blue" | "primary"
   className?: string
-  /** Se true, impede quebra de linha dentro do highlight */
   nowrap?: boolean
 }
 
@@ -40,9 +39,8 @@ export function TextHighlight({
         } as React.CSSProperties
       }
       className={cn(
-        "relative z-10 inline bg-transparent px-[0.3em]",
-        "before:absolute before:top-[0.55em] before:bottom-[0.05em]",
-        "before:right-[0.3em] before:left-[0.3em]",
+        "relative z-10 inline bg-transparent",
+        "before:absolute before:inset-x-0 before:bottom-0 before:h-1/2",
         "before:-z-10 before:rounded-full",
         "before:content-['']",
         highlightColor,
