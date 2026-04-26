@@ -8,7 +8,7 @@ export function HowToCreateMessageSection() {
     >
       <div className="flex w-full max-w-300 flex-col gap-10">
         <header className="flex flex-col gap-2">
-          <h3 className="heading-base text-center text-foreground">
+          <h3 className="heading-sm text-center text-foreground">
             Como criar mensagens automáticas para o WhatsApp
           </h3>
           <p className="body-lg text-center text-foreground">
