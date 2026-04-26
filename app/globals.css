@@ -108,58 +108,119 @@
   --ring: oklch(80.4% 0.146 219.5);
 }
 
-@layer components {
-  .heading-xl {
-    @apply font-heading text-[3rem] leading-[1.4] font-bold;
-  }
-  .heading-lg {
-    @apply font-heading text-[2.5rem] leading-[1.4] font-bold;
-  }
-  .heading-md {
-    @apply font-heading text-[2rem] leading-[1.4] font-bold;
-  }
-  .heading-base {
-    @apply font-heading text-[1.5rem] leading-[1.4] font-bold;
-  }
-  .heading-xs {
-    @apply font-heading text-xl leading-[1.4] font-bold;
-  }
-  .heading-xs-semibold {
-    @apply font-heading text-xl leading-[1.4] font-semibold;
-  }
-  .body-lg-bold {
-    @apply font-sans text-xl leading-[1.4] font-bold tracking-[-0.02em];
-  }
-  .body-lg {
-    @apply font-sans text-xl leading-[1.4] font-normal tracking-[-0.02em];
-  }
-  .body-md {
-    @apply font-sans text-lg leading-[1.4] font-normal;
-  }
-  .body-md-bold {
-    @apply font-sans text-lg leading-[1.4] font-bold tracking-[-0.02em];
-  }
-  .body-sm {
-    @apply font-sans text-base leading-[1.4] font-normal;
-  }
-  .body-sm-bold {
-    @apply font-sans text-base leading-[1.4] font-bold tracking-[-0.02em];
-  }
-  .body-sm-semibold {
-    @apply font-sans text-base leading-[1.4] font-semibold;
-  }
-  .body-xs {
-    @apply font-sans text-sm leading-[1.4] font-normal;
-  }
-  .caption {
-    @apply font-sans text-xs leading-[1.4] font-normal;
-  }
-  .footer-bold {
-    @apply font-subtitle text-sm leading-[1.2] font-bold underline;
-  }
-  .footer-regular {
-    @apply font-subtitle text-sm leading-[1.2] font-normal;
-  }
+@utility heading-xl {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@utility heading-lg {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@utility heading-md {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@utility heading-base {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@utility heading-xs {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+@utility heading-xs-semibold {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+@utility body-lg-bold {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+@utility body-lg {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+@utility body-md {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@utility body-md-bold {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+@utility body-sm {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@utility body-sm-bold {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+@utility body-sm-semibold {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+@utility body-xs {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@utility caption {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+@utility subtitle-xs-bold {
+  font-family: var(--font-subtitle);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+@utility footer-bold {
+  font-family: var(--font-subtitle);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-weight: 700;
+  text-decoration: underline;
+}
+@utility footer-regular {
+  font-family: var(--font-subtitle);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
 @layer base {

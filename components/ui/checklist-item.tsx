@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import {
   CheckCircleIcon,
   type checkCircleVariants,
-} from "@/components/ui/check-circle-icon"
+} from "@/components/ui/icons/check-circle-icon"
 
 interface ChecklistItemProps
   extends React.ComponentProps<"li">, VariantProps<typeof checkCircleVariants> {
@@ -30,7 +30,7 @@ export function ChecklistItem({
       {...props}
     >
       <CheckCircleIcon variant={variant} size={iconSize} />
-      <p className={cn("body-sm p-0 text-foreground", textClassName)}>
+      <p className={cn("body-sm md:body-md p-0 text-foreground", textClassName)}>
         {children}
       </p>
     </li>
