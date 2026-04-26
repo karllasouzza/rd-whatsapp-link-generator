@@ -22,8 +22,6 @@ export async function submitWpLinkGeneratorFormService(
       }
     )
 
-    console.log(response)
-
     if (!response.ok) {
       return {
         success: false,

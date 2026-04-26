@@ -38,52 +38,58 @@ export function useWpLinkGeneratorForm() {
       const digits = (whatsappValue || "").replace(/\D/g, "")
       phoneMask.setValue(digits)
     }
-  }, [whatsappValue])
+  }, [whatsappValue, phoneMask])
 
-  const generateLink = useCallback(async (data: FormData): Promise<void> => {
-    setSubmitError(null)
-    setIsSubmitting(true)
-    const loadingToastId = toast.loading("Gerando link...")
+  const generateLink = useCallback(
+    async (data: FormData): Promise<void> => {
+      setSubmitError(null)
+      setIsSubmitting(true)
+      const loadingToastId = toast.loading("Gerando link...")
 
-    try {
-      const submitResult = await submitWpLinkGeneratorFormService(data)
+      try {
+        const submitResult = await submitWpLinkGeneratorFormService(data)
 
-      if (!submitResult.success) {
-        const errorMsg =
-          submitResult.error ?? "Erro ao enviar formulário. Tente novamente."
+        if (!submitResult.success) {
+          const errorMsg =
+            submitResult.error ?? "Erro ao enviar formulário. Tente novamente."
+          setSubmitError(errorMsg)
+          toast.error(errorMsg, { id: loadingToastId })
+          form.setError("root", { message: errorMsg })
+          return
+        }
+
+        useLinkStore
+          .getState()
+          .generateLink(phoneMask.rawDigits, data.message ?? "")
+        toast.success("Link gerado com sucesso!", { id: loadingToastId })
+        router.push("/success")
+        return
+      } catch {
+        const errorMsg = "Ocorreu um erro inesperado. Tente novamente."
         setSubmitError(errorMsg)
         toast.error(errorMsg, { id: loadingToastId })
         form.setError("root", { message: errorMsg })
         return
+      } finally {
+        setIsSubmitting(false)
       }
+    },
+    [phoneMask, router]
+  )
 
-      useLinkStore
-        .getState()
-        .generateLink(phoneMask.rawDigits, data.message ?? "")
-      toast.success("Link gerado com sucesso!", { id: loadingToastId })
-      router.push("/success")
-      return
-    } catch {
-      const errorMsg = "Ocorreu um erro inesperado. Tente novamente."
-      setSubmitError(errorMsg)
-      toast.error(errorMsg, { id: loadingToastId })
-      form.setError("root", { message: errorMsg })
-      return
-    } finally {
-      setIsSubmitting(false)
-    }
-  }, [phoneMask, router])
-
-  const onInvalid = useCallback((errors: FieldErrors<FormData>) => {
-    const firstFieldKey = Object.keys(errors)[0]
-    if (firstFieldKey) {
-      const firstError = errors[firstFieldKey as keyof FormData]
-      const errorMsg =
-        firstError?.message ?? "Verifique os campos do formulário."
-      toast.error(errorMsg)
-      form.setFocus(firstFieldKey as keyof FormData)
-    }
-  }, [form])
+  const onInvalid = useCallback(
+    (errors: FieldErrors<FormData>) => {
+      const firstFieldKey = Object.keys(errors)[0]
+      if (firstFieldKey) {
+        const firstError = errors[firstFieldKey as keyof FormData]
+        const errorMsg =
+          firstError?.message ?? "Verifique os campos do formulário."
+        toast.error(errorMsg)
+        form.setFocus(firstFieldKey as keyof FormData)
+      }
+    },
+    [form]
+  )
 
   const resetForm = useCallback(() => {
     form.reset()
