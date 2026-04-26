@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
-import { useForm } from "react-hook-form"
+import { useForm, type FieldErrors } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
 
@@ -74,6 +74,17 @@ export function useWpLinkGeneratorForm() {
     }
   }, [])
 
+  const onInvalid = useCallback((errors: FieldErrors<FormData>) => {
+    const firstFieldKey = Object.keys(errors)[0]
+    if (firstFieldKey) {
+      const firstError = errors[firstFieldKey as keyof FormData]
+      const errorMsg =
+        firstError?.message ?? "Verifique os campos do formulário."
+      toast.error(errorMsg)
+      form.setFocus(firstFieldKey as keyof FormData)
+    }
+  }, [form])
+
   const resetForm = useCallback(() => {
     form.reset()
     phoneMask.setValue("")
@@ -84,6 +95,7 @@ export function useWpLinkGeneratorForm() {
     generateLink,
     isSubmitting,
     submitError,
+    onInvalid,
     resetForm,
     phoneMask,
   }

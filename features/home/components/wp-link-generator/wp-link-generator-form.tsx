@@ -13,12 +13,12 @@ import { WpLinkGeneratorRoleSelect } from "./wp-link-generator-role-select"
 import { WpLinkGeneratorPrivacyPolicy } from "./wp-link-generator-privacy-policy"
 
 export function WpLinkGeneratorForm() {
-  const { form, generateLink, isSubmitting, submitError, phoneMask } =
+  const { form, generateLink, isSubmitting, submitError, onInvalid, phoneMask } =
     useWpLinkGeneratorForm()
 
   return (
     <form
-      onSubmit={form.handleSubmit(generateLink)}
+      onSubmit={form.handleSubmit(generateLink, onInvalid)}
       noValidate
       className="flex w-full flex-col items-center justify-center gap-8 **:z-20"
     >
