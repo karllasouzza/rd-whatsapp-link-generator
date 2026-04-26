@@ -1,3 +1,5 @@
+"use server"
+
 import type { FormData } from "../lib/form-schema"
 
 interface SubmitResult {
@@ -5,7 +7,9 @@ interface SubmitResult {
   error?: string
 }
 
-export async function submitWpLinkGeneratorFormService(data: FormData): Promise<SubmitResult> {
+export async function submitWpLinkGeneratorFormService(
+  data: FormData
+): Promise<SubmitResult> {
   try {
     const response = await fetch(
       "https://hooks.zapier.com/hooks/catch/13309391/uie4g8v/",
@@ -18,6 +22,8 @@ export async function submitWpLinkGeneratorFormService(data: FormData): Promise<
       }
     )
 
+    console.log(response)
+
     if (!response.ok) {
       return {
         success: false,
@@ -26,9 +32,10 @@ export async function submitWpLinkGeneratorFormService(data: FormData): Promise<
     }
 
     return { success: true }
-  } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "Erro de rede desconhecido"
-    return { success: false, error: message }
+  } catch {
+    return {
+      success: false,
+      error: "Erro de conexão. Verifique sua internet e tente novamente.",
+    }
   }
 }

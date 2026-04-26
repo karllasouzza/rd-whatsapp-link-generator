@@ -43,6 +43,7 @@ export function useWpLinkGeneratorForm() {
   const generateLink = useCallback(async (data: FormData): Promise<void> => {
     setSubmitError(null)
     setIsSubmitting(true)
+    const loadingToastId = toast.loading("Gerando link...")
 
     try {
       const submitResult = await submitWpLinkGeneratorFormService(data)
@@ -51,7 +52,7 @@ export function useWpLinkGeneratorForm() {
         const errorMsg =
           submitResult.error ?? "Erro ao enviar formulário. Tente novamente."
         setSubmitError(errorMsg)
-        toast.error(errorMsg)
+        toast.error(errorMsg, { id: loadingToastId })
         form.setError("root", { message: errorMsg })
         return
       }
@@ -59,13 +60,13 @@ export function useWpLinkGeneratorForm() {
       useLinkStore
         .getState()
         .generateLink(phoneMask.rawDigits, data.message ?? "")
-      toast.success("Link gerado com sucesso!")
+      toast.success("Link gerado com sucesso!", { id: loadingToastId })
       router.push("/success")
       return
     } catch {
       const errorMsg = "Ocorreu um erro inesperado. Tente novamente."
       setSubmitError(errorMsg)
-      toast.error(errorMsg)
+      toast.error(errorMsg, { id: loadingToastId })
       form.setError("root", { message: errorMsg })
       return
     } finally {
