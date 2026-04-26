@@ -3,17 +3,19 @@
 import { useState, useCallback, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+
 import { formSchema, type FormData } from "../lib/form-schema"
-import type { Cargo } from "../lib/cargo-options"
-import { submitForm } from "../lib/submit-form"
+import type { Role } from "../types/roles"
+import { submitWpLinkGeneratorFormService } from "../services/submit-wp-link-generator-form"
 import { usePhoneMask } from "./use-phone-mask"
+import { useRouter } from "next/navigation"
+import { useLinkStore } from "../../../stores/use-link-store"
 
 export function useWpLinkGeneratorForm() {
-  const [generatedLink, setGeneratedLink] = useState<string | null>(null)
+  const router = useRouter()
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
-  const [salesHoursEnabled, setSalesHoursEnabled] = useState(false)
-  const [autoMessageEnabled, setAutoMessageEnabled] = useState(false)
 
   const phoneMask = usePhoneMask()
 
@@ -23,7 +25,7 @@ export function useWpLinkGeneratorForm() {
       name: "",
       whatsapp: "",
       message: "",
-      role: "" as Cargo,
+      role: "" as Role,
     },
     mode: "onChange",
   })
@@ -35,18 +37,17 @@ export function useWpLinkGeneratorForm() {
       const digits = (whatsappValue || "").replace(/\D/g, "")
       phoneMask.setValue(digits)
     }
-  }, [whatsappValue]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [whatsappValue])
 
   const generateLink = useCallback(
-    async (data: FormData): Promise<string | null> => {
+    async (data: FormData): Promise<void> => {
       setSubmitError(null)
       setIsSubmitting(true)
 
       try {
-        const link = `https://wa.me/55${phoneMask.rawDigits}?text=${encodeURIComponent(data.message ?? "")}`
-        setGeneratedLink(link)
+        useLinkStore.getState().generateLink(phoneMask.rawDigits, data.message ?? "")
 
-        const submitResult = await submitForm(data)
+        const submitResult = await submitWpLinkGeneratorFormService(data)
 
         if (!submitResult.success) {
           setSubmitError(
@@ -54,44 +55,29 @@ export function useWpLinkGeneratorForm() {
           )
         }
 
-        return link
+        router.push("/success")
+        return
       } catch {
         setSubmitError("Ocorreu um erro inesperado. Tente novamente.")
-        return null
+        return
       } finally {
         setIsSubmitting(false)
       }
     },
-    [phoneMask.rawDigits]
+    []
   )
 
   const resetForm = useCallback(() => {
     form.reset()
     phoneMask.setValue("")
-    setGeneratedLink(null)
-    setSalesHoursEnabled(false)
-    setAutoMessageEnabled(false)
   }, [form, phoneMask])
-
-  const toggleSalesHours = useCallback(() => {
-    setSalesHoursEnabled((prev) => !prev)
-  }, [])
-
-  const toggleAutoMessage = useCallback(() => {
-    setAutoMessageEnabled((prev) => !prev)
-  }, [])
 
   return {
     form,
-    generatedLink,
     generateLink,
     isSubmitting,
     submitError,
     resetForm,
-    salesHoursEnabled,
-    toggleSalesHours,
-    autoMessageEnabled,
-    toggleAutoMessage,
     phoneMask,
   }
 }
