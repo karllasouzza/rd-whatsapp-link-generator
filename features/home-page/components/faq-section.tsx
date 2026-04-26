@@ -10,7 +10,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { ChevronDown, ChevronUp } from "lucide-react"
 
-const faqItems = [
+const FAQ_ITEMS = [
   {
     id: "o-que-e",
     question: "O que é o Gerador de link para WhatsApp?",
@@ -37,15 +37,15 @@ const faqItems = [
   },
 ] as const
 
-export function FaqSection() {
-  const [openItems, setOpenItems] = React.useState<string[]>(
-    faqItems.map((item) => item.id)
-  )
+const ALL_FAQ_ITEMS_IDS = FAQ_ITEMS.map((item) => item.id)
 
-  const allValues = faqItems.map((item) => item.id)
+export function FaqSection() {
+  const [openItems, setOpenItems] = React.useState<string[]>(ALL_FAQ_ITEMS_IDS)
+
+  const allValues = FAQ_ITEMS.map((item) => item.id)
   const allOpen = openItems.length === allValues.length
 
-  function toggleAll() {
+  function toggleAllAccordion() {
     if (allOpen) {
       setOpenItems([])
     } else {
@@ -61,7 +61,7 @@ export function FaqSection() {
             variant="outline"
             size="sm"
             className="w-max shrink-0 self-end"
-            onClick={toggleAll}
+            onClick={toggleAllAccordion}
           >
             {allOpen ? "Fechar todos" : "Abrir todos"}
             {allOpen ? (
@@ -71,7 +71,7 @@ export function FaqSection() {
             )}
           </Button>
 
-          <h1 className="heading-base text-center text-foreground">
+          <h1 className="text-center heading-base text-foreground">
             Perguntas mais comuns
           </h1>
         </header>
@@ -82,7 +82,7 @@ export function FaqSection() {
           onValueChange={setOpenItems}
           className="flex w-full flex-col"
         >
-          {faqItems.map((item) => (
+          {FAQ_ITEMS.map((item) => (
             <AccordionItem
               key={item.id}
               value={item.id}

@@ -1,11 +1,11 @@
-import type { FormData } from "./form-schema"
+import type { FormData } from "../lib/form-schema"
 
 interface SubmitResult {
   success: boolean
   error?: string
 }
 
-export async function submitForm(data: FormData): Promise<SubmitResult> {
+export async function submitWpLinkGeneratorFormService(data: FormData): Promise<SubmitResult> {
   try {
     const response = await fetch(
       "https://hooks.zapier.com/hooks/catch/13309391/uie4g8v/",

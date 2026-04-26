@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { CARGO_OPTIONS } from "../../lib/cargo-options"
+import { ROLES } from "../../types/roles"
 import type { FormData } from "../../lib/form-schema"
 
 interface FormSelectWithLabelProps {
@@ -34,7 +34,7 @@ export function WpLinkGeneratorRoleSelect({
         <SelectValue placeholder="Selecione seu cargo" />
       </SelectTrigger>
       <SelectContent>
-        {CARGO_OPTIONS.map((option, i) => (
+        {ROLES.map((option, i) => (
           <SelectItem key={`option-${i}`} value={option}>
             {option}
           </SelectItem>

@@ -41,7 +41,7 @@ export function MessagesTemplatesSection() {
         </ul>
 
         <Button asChild size="default" className="mx-auto w-max">
-          <a href="#hero-section">
+          <a href="#wp-link-generator">
             Gere seu link grátis
             <ArrowRight className="size-4 stroke-2" />
           </a>

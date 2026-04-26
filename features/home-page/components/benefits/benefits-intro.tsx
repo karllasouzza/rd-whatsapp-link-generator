@@ -7,7 +7,7 @@ export function BenefitsIntro() {
         faz uso das redes sociais). Quando você traz um link de WhatsApp nas
         redes sociais ou site da sua empresa, só tem vantagens:
       </span>
-      <i className="body-xs md:body-md text-left text-muted-foreground italic">
+      <i className="caption text-left text-muted-foreground italic">
         *Dados da pesquisa Digital 2022: Brazil
       </i>
     </article>

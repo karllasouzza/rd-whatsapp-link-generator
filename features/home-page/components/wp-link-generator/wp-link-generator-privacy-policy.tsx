@@ -1,4 +1,4 @@
-export function PrivacyPolicyNotice() {
+export function WpLinkGeneratorPrivacyPolicy() {
   return (
     <aside className="col-start-1 col-end-3 flex flex-col items-center">
       <p className="caption text-center text-foreground">

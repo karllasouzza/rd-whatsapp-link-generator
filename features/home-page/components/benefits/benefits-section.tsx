@@ -12,7 +12,7 @@ export function BenefitsSection() {
     >
       <main className="flex max-w-300 flex-col gap-10 px-6 py-14 md:px-12 lg:flex-row lg:items-start lg:px-20">
         <header className="flex h-max w-full">
-          <h3 className="heading-xl text-left text-foreground">
+          <h3 className="heading-md md:heading-xl text-left text-foreground">
             Acelere suas conversas com o{" "}
             <TextHighlight nowrap variant="cyan">
               Gerador de link de
@@ -27,7 +27,7 @@ export function BenefitsSection() {
           <BenefitsList />
 
           <Button asChild size="default" className="w-max">
-            <a href="#hero-section">
+            <a href="#wp-link-generator">
               Gere seu link grátis
               <ArrowRight className="size-4" />
             </a>

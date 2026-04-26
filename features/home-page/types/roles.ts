@@ -1,4 +1,4 @@
-export const CARGO_OPTIONS = [
+export const ROLES = [
   "Sócio(a) / CEO / Proprietário(a)",
   "Diretor(a) de Vendas",
   "Diretor(a) de Marketing",
@@ -14,4 +14,4 @@ export const CARGO_OPTIONS = [
   "Outros Cargos",
 ] as const
 
-export type Cargo = (typeof CARGO_OPTIONS)[number]
+export type Role = (typeof ROLES)[number]

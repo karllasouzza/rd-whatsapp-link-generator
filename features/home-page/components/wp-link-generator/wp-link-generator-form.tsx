@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react"
 
 import { useWpLinkGeneratorForm } from "../../hooks/use-wp-link-generator-form"
 import { WpLinkGeneratorRoleSelect } from "./wp-link-generator-role-select"
-import { PrivacyPolicyNotice } from "./privacy-policy-notice"
+import { WpLinkGeneratorPrivacyPolicy } from "./wp-link-generator-privacy-policy"
 
 export function WpLinkGeneratorForm() {
   const { form, generateLink, isSubmitting, submitError, phoneMask } =
@@ -20,7 +20,7 @@ export function WpLinkGeneratorForm() {
     <form
       onSubmit={form.handleSubmit(generateLink)}
       noValidate
-      className="flex flex-col w-full items-center justify-center gap-8 **:z-20"
+      className="flex w-full flex-col items-center justify-center gap-8 **:z-20"
     >
       <section className="grid w-full grid-flow-row grid-cols-2 gap-6">
         {/* WhatsApp Number */}
@@ -153,21 +153,23 @@ export function WpLinkGeneratorForm() {
           )}
         </fieldset>
 
+        {/* Submit Error */}
         {submitError && (
-          <p className="caption col-start-1 col-end-3 text-center text-destructive">
+          <p className="col-start-1 col-end-3 text-center caption text-destructive">
             {submitError}
           </p>
         )}
       </section>
 
-      <PrivacyPolicyNotice />
+      {/* Privacy Policy */}
+      <WpLinkGeneratorPrivacyPolicy />
 
-      {/* Submit */}
+      {/* Submit Button */}
       <Button
         type="submit"
         variant="default"
         size="default"
-        className="col-start-1 col-end-3 mx-auto w-max m-0 border-0 ring-0"
+        className="col-start-1 col-end-3 m-0 mx-auto w-max border-0 ring-0"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Gerando..." : "Gerar link grátis"}
