@@ -72,7 +72,7 @@ export function useWpLinkGeneratorForm() {
     } finally {
       setIsSubmitting(false)
     }
-  }, [])
+  }, [phoneMask, router])
 
   const onInvalid = useCallback((errors: FieldErrors<FormData>) => {
     const firstFieldKey = Object.keys(errors)[0]

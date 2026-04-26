@@ -21,6 +21,7 @@
   --color-brand-5: oklch(80.4% 0.146 219.5);
   --color-brand-6: oklch(89% 0.107 207.3);
   --color-link: oklch(44.6% 0.103 240.3);
+  --color-mint: oklch(85.8% 0.163 174.4);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
