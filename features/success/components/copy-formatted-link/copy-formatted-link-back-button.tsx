@@ -4,7 +4,7 @@ import { ChevronLeftIcon } from "@/components/ui/icons/chevron-left-icon"
 import Link from "next/link"
 import { useLinkStore } from "@/stores/use-link-store"
 
-export function BackLink() {
+export function CopyFormattedLinkBackButton() {
   const resetLink = useLinkStore((state) => state.resetLink)
 
   const handleClick = () => {

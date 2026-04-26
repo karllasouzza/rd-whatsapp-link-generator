@@ -7,7 +7,7 @@ import { useClipboard } from "@/features/success/hooks/use-clipboard"
 import { useLinkStore } from "@/stores/use-link-store"
 import { useIsMobile } from "@/hooks/use-mobile"
 
-export function CopyLinkButton() {
+export function CopyFormattedLinkClipboardCopyButton() {
   const link = useLinkStore((state) => state.link)
   const isMobile = useIsMobile()
   const { copy, copied } = useClipboard()

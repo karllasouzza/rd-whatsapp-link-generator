@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRightIcon } from "@/components/ui/icons/arrow-right-icon"
 
-export function RDMarketingCTA() {
+export function CopyFormattedLinkRDMarketingCTA() {
   return (
     <div className="flex flex-col items-center gap-3 lg:items-end">
       <Button asChild variant="outline" className="hidden lg:inline-flex">

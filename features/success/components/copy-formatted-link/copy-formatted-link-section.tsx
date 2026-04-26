@@ -1,5 +1,5 @@
-import { PromoCard } from "./promo-card"
-import { GeneratedLinkContent } from "./generated-link-content"
+import { CopyFormattedLinkPromoCard } from "./copy-formatted-link-promo-card"
+import { CopyFormattedLinkSectionContent } from "./copy-formatted-link-section-content"
 import { WhatsAPPLogo } from "@/components/shared/whats-app-logo"
 
 export function CopyFormattedLinkSection() {
@@ -10,9 +10,9 @@ export function CopyFormattedLinkSection() {
     >
       <div className="bg-form-gradient flex w-full items-center justify-center rounded-2xl p-6 py-14 max-md:pt-12 md:px-12 md:py-18">
         <div className="flex w-full max-w-209.5 flex-col justify-center gap-14 md:gap-18">
-          <GeneratedLinkContent />
+          <CopyFormattedLinkSectionContent />
 
-          <PromoCard />
+          <CopyFormattedLinkPromoCard />
         </div>
       </div>
 

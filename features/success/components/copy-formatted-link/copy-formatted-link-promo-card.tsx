@@ -2,7 +2,7 @@
 
 import { ChevronRightIcon } from "@/components/ui/icons/chevron-right-icon"
 
-export function PromoCard() {
+export function CopyFormattedLinkPromoCard() {
   return (
     <div className="flex flex-col gap-4 rounded-2xl border border-brand-6 bg-white p-6">
       <h2 className="heading-xs text-brand-2">
