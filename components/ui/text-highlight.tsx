@@ -33,6 +33,7 @@ export function TextHighlight({
         "before:absolute before:inset-x-0 before:bottom-0 before:h-1/2",
         "before:-z-10 before:rounded-md",
         "before:content-['']",
+        "before:transition-[height] before:duration-300 before:ease-out hover:before:h-full",
         highlightColor,
         nowrap && "whitespace-nowrap",
         className

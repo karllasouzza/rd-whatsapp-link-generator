@@ -26,11 +26,16 @@ export function ChecklistItem({
   return (
     <li
       data-slot="checklist-item"
-      className={cn("flex flex-row items-center gap-3", className)}
+      className={cn(
+        "flex flex-row items-center gap-3 hover:[&>svg]:animate-pulse",
+        className
+      )}
       {...props}
     >
       <CheckCircleIcon variant={variant} size={iconSize} />
-      <p className={cn("body-sm md:body-md p-0 text-foreground", textClassName)}>
+      <p
+        className={cn("p-0 body-sm text-foreground md:body-md", textClassName)}
+      >
         {children}
       </p>
     </li>

@@ -1,6 +1,8 @@
 export function Footer() {
+  const copyrightYear = new Date().getFullYear()
+
   return (
-    <footer className="flex w-full h-14 items-center justify-center bg-muted p-5 lg:px-20">
+    <footer className="flex h-14 w-full items-center justify-center bg-muted p-5 lg:px-20">
       <section className="flex w-max flex-row items-center gap-2 sm:gap-4">
         <a
           href="https://legal.rdstation.com/pt/privacy-policy/"
@@ -11,7 +13,7 @@ export function Footer() {
           Política de Privacidade
         </a>
         <span className="footer-regular text-muted-foreground">
-          © 2023 Resultados Digitais
+          © {copyrightYear} Resultados Digitais
         </span>
       </section>
     </footer>
