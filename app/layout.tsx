@@ -8,7 +8,10 @@ import { Header } from "@/components/shared/header"
 import { Footer } from "@/components/shared/footer"
 
 export const metadata: Metadata = {
-  title: "Gerador de Link para WhatsApp",
+  title: {
+    default: "Gerador de Link para WhatsApp",
+    template: "%s | Gerador de Link para WhatsApp",
+  },
   description:
     "Gere links para WhatsApp facilmente, inicie conversas instantaneamente em seus canais digitais!",
   icons: {

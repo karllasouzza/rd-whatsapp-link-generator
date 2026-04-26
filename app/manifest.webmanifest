@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "RD Station - Gerador de Link para WhatsApp",
+    "short_name": "Gerador de Link para WhatsApp",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
