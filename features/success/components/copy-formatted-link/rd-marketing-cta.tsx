@@ -20,15 +20,15 @@ export function RDMarketingCTA() {
         </a>
       </Button>
 
-      <a
-        href="https://www.rdstation.com/produtos/marketing/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-center body-md-bold text-link md:text-right lg:hidden"
-      >
-        <p>Adicione um Botão de</p>
-        <p>WhatsApp no site</p>
-      </a>
+        <a
+          href="https://www.rdstation.com/produtos/marketing/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-center body-md-bold text-link md:text-right flex-col hover:underline lg:hidden"
+        >
+          <p>Adicione um Botão de</p>
+          <p>WhatsApp no site</p>
+        </a>
 
       <p className="text-center body-sm text-foreground md:text-right">
         Faça isso com o teste grátis do{" "}

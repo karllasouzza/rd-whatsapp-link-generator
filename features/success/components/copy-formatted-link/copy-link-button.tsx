@@ -22,7 +22,7 @@ export function CopyLinkButton() {
       disabled={copied}
     >
       {copied ? (
-        <CheckIcon size={16} className="text-brand-4" />
+        <CheckIcon size={16} className="text-mint" />
       ) : (
         <CopyIcon size={16} />
       )}

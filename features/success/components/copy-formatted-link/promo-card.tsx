@@ -21,11 +21,11 @@ export function PromoCard() {
         href="https://www.rdstation.com/produtos/conversas/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-max items-center gap-1 text-link transition-opacity hover:opacity-80"
+        className="flex w-max items-center body-sm text-link transition-opacity hover:opacity-80 lg:body-md-bold gap-1"
       >
-        <span className="body-sm lg:body-md-bold">
-          Conheça o RD Station Conversas
-        </span>
+        <p>
+        Conheça o RD Station Conversas
+        </p>
         <ChevronRightIcon size={16} className="shrink-0" />
       </a>
     </div>

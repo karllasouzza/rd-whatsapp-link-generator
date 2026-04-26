@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { SuccessPageGuard } from "./success-page-guard"
 
 export const metadata: Metadata = {
   title: "Link gerado com sucesso!",
@@ -18,4 +19,6 @@ export const metadata: Metadata = {
   },
 }
 
-export { SuccessPage as default } from "@/features/success/page"
+export default function SuccessPage() {
+  return <SuccessPageGuard />
+}
