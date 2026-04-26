@@ -1,11 +1,10 @@
 import type { Metadata } from "next"
-import "./globals.css"
 import { Toaster } from "sonner"
+
 import { ThemeProvider } from "@/components/shared/theme-provider"
-import { cn } from "@/lib/utils"
 import { fontHeading, fontSans, fontSubtitle } from "@/lib/fonts"
-import { Header } from "@/components/shared/header"
-import { Footer } from "@/components/shared/footer"
+import { cn } from "@/lib/utils"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: {
@@ -62,13 +61,9 @@ export default function RootLayout({
         fontSubtitle.variable
       )}
     >
-      <body className="flex flex-1 overflow-y-auto">
+      <body className="flex flex-1">
         <ThemeProvider>
-          <div className="flex w-screen flex-1 flex-col">
-            <Header />
-            <main className="h-max w-screen flex-1">{children}</main>
-            <Footer />
-          </div>
+          {children}
           <Toaster richColors position="top-center" />
         </ThemeProvider>
       </body>

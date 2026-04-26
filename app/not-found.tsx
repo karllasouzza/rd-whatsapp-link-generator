@@ -16,25 +16,24 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="flex w-full flex-1 items-center justify-center px-4 md:px-6">
-      <div className="flex w-full max-w-xl flex-col items-center gap-6 text-center">
-        <div className="flex flex-col gap-3">
-          <span className="heading-xl text-brand-4">404</span>
-
-          <h1 className="heading-md text-foreground md:heading-lg lg:heading-xl">
-            Ops! Não achamos o que você está procurando!
+    <section className="flex w-full h-full flex-1 items-center justify-center px-4 md:px-6">
+      <div className="flex w-full h-max flex-col items-center gap-10 text-center max-w-3xl">
+        <span className="heading-xl text-brand-4">OPS!</span>
+        <div className="flex flex-col">
+          <h1 className="heading-md text-foreground">
+            Não achamos o que você está procurando
           </h1>
 
           <p className="body-sm text-muted-foreground md:body-lg">
             Mas para todos os casos, você pode criar seu link de WhatsApp
-            novamente!
+            novamente e continuar com suas mensagens!
           </p>
         </div>
 
         <Button asChild>
           <Link href="/">
             <ArrowLeft size={20} />
-            Gerar link
+            Voltar e criar um novo link
           </Link>
         </Button>
       </div>
