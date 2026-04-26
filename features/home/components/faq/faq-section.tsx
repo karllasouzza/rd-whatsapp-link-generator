@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import { ChevronsDown, ChevronsUp } from "lucide-react"
+import { ChevronsUp } from "lucide-react"
 
 import { ALL_FAQ_ITEMS_IDS } from "./faq-accordion"
 import { FaqContent } from "./faq-content"
@@ -31,11 +31,11 @@ export function FaqSection() {
           onClick={toggleAllAccordion}
         >
           {isAllFaqItemsOpened ? "Fechar todos" : "Abrir todos"}
-          {isAllFaqItemsOpened ? (
-            <ChevronsUp className="size-4 text-foreground" />
-          ) : (
-            <ChevronsDown className="size-4 text-foreground" />
-          )}
+          <ChevronsUp
+            className={`size-4 text-foreground transition-transform duration-300 ${
+              isAllFaqItemsOpened ? "" : "rotate-180"
+            }`}
+          />
         </Button>
 
         <FaqContent openItems={openItems} onValueChange={setOpenItems} />
