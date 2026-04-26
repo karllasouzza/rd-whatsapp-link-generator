@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
+import { ChevronLeftIcon } from "@/components/ui/icons/chevron-left-icon"
 
 export const metadata: Metadata = {
   title: "404 - Página não encontrada | Gerador de Link para WhatsApp",
@@ -32,7 +32,7 @@ export default function NotFound() {
 
         <Button asChild>
           <Link href="/">
-            <ArrowLeft size={20} />
+            <ChevronLeftIcon size={20} />
             Voltar e criar um novo link
           </Link>
         </Button>

@@ -5900,15 +5900,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^1.9.0":
-  version: 1.11.0
-  resolution: "lucide-react@npm:1.11.0"
-  peerDependencies:
-    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/2a2b6416eb89aea2bd59fa0a513d59a46090cd37c55633414ffadb86e4c7bba9dbd7991c9681fc1e879f565c885aaf5938921ab093d7f7c5d9d8c6bbe655ef30
-  languageName: node
-  linkType: hard
-
 "magic-string@npm:^0.30.21":
   version: 0.30.21
   resolution: "magic-string@npm:0.30.21"
@@ -6821,7 +6812,6 @@ __metadata:
     clsx: "npm:^2.1.1"
     eslint: "npm:^9.39.4"
     eslint-config-next: "npm:16.1.7"
-    lucide-react: "npm:^1.9.0"
     next: "npm:16.1.7"
     postcss: "npm:^8"
     prettier: "npm:^3.8.1"
