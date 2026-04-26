@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground font-semibold text-white hover:scale-[1.02] hover:shadow-sm hover:opacity-90 hover:[&_svg]:text-brand-4 disabled:hover:scale-100 disabled:hover:shadow-none disabled:hover:opacity-100 disabled:hover:[&_svg]:text-current",
         outline:
-          "border-brand-2 bg-background font-semibold hover:bg-primary hover:text-white disabled:hover:bg-background disabled:hover:text-current aria-expanded:bg-muted aria-expanded:text-foreground hover:[&_svg]:text-white",
+          "border-brand-2 bg-background font-semibold hover:bg-brand-4/80 hover:text-white disabled:hover:bg-background disabled:hover:text-current aria-expanded:bg-muted aria-expanded:text-foreground hover:[&_svg]:text-white",
         link: "text-primary underline-offset-4 hover:underline disabled:hover:translate-x-0 disabled:hover:no-underline",
       },
       size: {
