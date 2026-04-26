@@ -3,12 +3,15 @@ import { MessagesTemplatesSection } from "./components/messages-templates/messag
 import { FaqSection } from "./components/faq-section"
 import { WpLinkGeneratorSection } from "./components/wp-link-generator/wp-link-generator-section"
 import { HowToCreateMessageSection } from "./components/how-to-create-message/how-to-create-message-section"
+import { MediaTopicsSection } from "./components/media-topics/media-topics-section"
 
 export function HomePage() {
   return (
-    <main className="flex w-full flex-1 flex-col overflow-hidden box-border">
+    <main className="box-border flex w-full flex-1 flex-col overflow-hidden">
       {/* Hero Banner */}
       <WpLinkGeneratorSection />
+
+      <MediaTopicsSection />
 
       {/* Benefits */}
       <BenefitsSection />
