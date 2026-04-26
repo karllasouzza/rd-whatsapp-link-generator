@@ -52,7 +52,7 @@ function AccordionTrigger({
         <ChevronUpIcon
           data-slot="accordion-trigger-icon"
           size={20}
-          className="pointer-events-none shrink-0 transition-transform duration-300 group-aria-expanded/accordion-trigger:rotate-180"
+          className="pointer-events-none shrink-0 rotate-180 transition-transform duration-300 group-aria-expanded/accordion-trigger:rotate-0"
         />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
