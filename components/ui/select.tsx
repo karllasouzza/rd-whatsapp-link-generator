@@ -4,7 +4,9 @@ import * as React from "react"
 import { Select as SelectPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
-import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react"
+import { CaretDownIcon } from "@/components/ui/icons/caret-down-icon"
+import { CheckIcon } from "@/components/ui/icons/check-icon"
+import { ChevronUpIcon } from "@/components/ui/icons/chevron-up-icon"
 
 function Select({
   ...props
@@ -57,7 +59,7 @@ function SelectTrigger({
     >
       {children}
       <SelectPrimitive.Icon asChild>
-        <ChevronDownIcon className="pointer-events-none size-4 shrink-0 text-muted-foreground" />
+        <CaretDownIcon className="pointer-events-none shrink-0 text-muted-foreground" size={16} />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   )
@@ -166,7 +168,7 @@ function SelectScrollUpButton({
       )}
       {...props}
     >
-      <ChevronUpIcon />
+      <ChevronUpIcon size={16} />
     </SelectPrimitive.ScrollUpButton>
   )
 }
@@ -184,7 +186,7 @@ function SelectScrollDownButton({
       )}
       {...props}
     >
-      <ChevronDownIcon />
+      <CaretDownIcon size={16} />
     </SelectPrimitive.ScrollDownButton>
   )
 }
