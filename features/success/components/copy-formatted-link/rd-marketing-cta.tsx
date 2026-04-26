@@ -5,14 +5,14 @@ import { ArrowRightIcon } from "@/components/ui/icons/arrow-right-icon"
 
 export function RDMarketingCTA() {
   return (
-    <div className="flex flex-col items-center gap-3 md:items-end">
+    <div className="flex flex-col items-center gap-3 lg:items-end">
       <Button asChild variant="outline" className="hidden lg:inline-flex">
         <a
           href="https://www.rdstation.com/produtos/marketing/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="text-center body-md-bold md:text-right">
+          <span className="text-right body-sm-semibold">
             Adicione um Botão de WhatsApp no site
           </span>
 
@@ -20,17 +20,18 @@ export function RDMarketingCTA() {
         </a>
       </Button>
 
-        <a
-          href="https://www.rdstation.com/produtos/marketing/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-center body-md-bold text-link md:text-right flex-col hover:underline lg:hidden"
-        >
-          <p>Adicione um Botão de</p>
-          <p>WhatsApp no site</p>
-        </a>
+      <a
+        href="https://www.rdstation.com/produtos/marketing/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col gap-1 text-center body-md-bold text-link hover:underline md:flex-row lg:hidden"
+      >
+        Adicione um Botão de
+        <br className="block md:hidden" />
+        WhatsApp no site
+      </a>
 
-      <p className="text-center body-sm text-foreground md:text-right">
+      <p className="text-center body-sm text-foreground lg:text-right">
         Faça isso com o teste grátis do{" "}
         <b className="font-semibold">RD Station Marketing</b>
       </p>

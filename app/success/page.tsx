@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { SuccessPageGuard } from "./success-page-guard"
+import { LinkStoreProvider } from "../providers/link-store-provider"
 
 export const metadata: Metadata = {
   title: "Link gerado com sucesso!",
@@ -20,5 +21,9 @@ export const metadata: Metadata = {
 }
 
 export default function SuccessPage() {
-  return <SuccessPageGuard />
+  return (
+    <LinkStoreProvider>
+      <SuccessPageGuard />
+    </LinkStoreProvider>
+  )
 }

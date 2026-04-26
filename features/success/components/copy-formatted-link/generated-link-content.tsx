@@ -26,7 +26,7 @@ export function GeneratedLinkContent() {
 
       <div
         role="toolbar"
-        className="items-center lg:items-start flex flex-col gap-8 md:flex-row md:justify-between"
+        className="items-center lg:items-start flex flex-col gap-8 lg:flex-row lg:justify-between"
       >
         <CopyLinkButton />
         <RDMarketingCTA />

@@ -12,7 +12,7 @@ interface ChevronRightIconProps extends Omit<
 
 export function ChevronRightIcon({
   className,
-  size = 9,
+  size,
   color,
   ...props
 }: ChevronRightIconProps) {

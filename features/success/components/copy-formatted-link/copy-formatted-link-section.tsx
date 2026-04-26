@@ -17,8 +17,8 @@ export function CopyFormattedLinkSection() {
       </div>
 
       <WhatsAPPLogo
-        className="absolute top-[-14.14px] right-[40.12px] h-[94.48px] w-[93.56px] rotate-[-12.76deg] md:top-[14.85px] md:right-[-0.05px] md:h-[150.9px] md:w-[152.39px] min-[1377px]:right-[-43.87px] min-[1377px]:top-[223.37px] min-[1377px]:h-[332.06px] min-[1377px]:w-[328.81px] min-[1686px]:top-[213.5px] min-[1686px]:right-[6.42px] min-[1686px]:h-[404.61px] min-[1686px]:w-[400.64px]"
-        sizes="(max-width: 767px) 97px, (max-width: 1376px) 174px, (max-width: 1685px) 342px, 410px"
+        className="absolute top-[-14.14px] right-[40.12px] h-[94.48px] w-[93.56px] rotate-[-12.76deg] md:top-[14.85px] md:right-[-0.05px] md:h-[150.9px] md:w-[152.39px] min-[1377px]:right-[-43.87px] min-[1377px]:top-[223.37px] min-[1377px]:h-[332.06px] min-[1377px]:w-[328.81px] max-[1685px]:min-[1466px]:h-[362px] max-[1685px]:min-[1466px]:w-[358px] min-[1686px]:top-[213.5px] min-[1686px]:right-[6.42px] min-[1686px]:h-[404.61px] min-[1686px]:w-[400.64px]"
+        sizes="(max-width: 767px) 97px, (max-width: 1376px) 174px, (max-width: 1465px) 342px, (max-width: 1685px) 362px, 410px"
       />
     </section>
   )
