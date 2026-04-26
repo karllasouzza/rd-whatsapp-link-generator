@@ -2,7 +2,10 @@
 
 import { cn } from "@/lib/utils"
 
-interface ChevronRightIconProps extends Omit<React.ComponentProps<"svg">, "color"> {
+interface ChevronRightIconProps extends Omit<
+  React.ComponentProps<"svg">,
+  "color"
+> {
   size?: number
   color?: string
 }
@@ -17,8 +20,8 @@ export function ChevronRightIcon({
 
   return (
     <svg
-      width={size}
-      height={size}
+      width={size || 9}
+      height={size || 14}
       viewBox="0 0 9 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
