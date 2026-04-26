@@ -30,7 +30,7 @@ const MessagesTemplatesSection = dynamic(
 )
 
 const FaqSection = dynamic(
-  () => import("./components/faq-section").then((mod) => mod.FaqSection)
+  () => import("./components/faq/faq-section").then((mod) => mod.FaqSection)
 )
 
 export function HomePage() {

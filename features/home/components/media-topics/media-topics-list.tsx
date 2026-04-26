@@ -2,6 +2,8 @@ import { ShareSquareIcon } from "@/components/ui/icons/share-square-icon"
 import { ChatIcon } from "@/components/ui/icons/chat-icon"
 import { LightningIcon } from "@/components/ui/icons/lightning-icon"
 
+import { MediaTopicsCard } from "./media-topics-card"
+
 const TOPICS = [
   {
     icon: ShareSquareIcon,
@@ -27,18 +29,13 @@ export function MediaTopicsList() {
   return (
     <ul className="grid w-full grid-flow-row grid-cols-1 gap-6 md:grid-cols-2 min-[1090px]:grid-cols-3 min-[1090px]:gap-8">
       {TOPICS.map((topic, index) => (
-        <li
+        <MediaTopicsCard
           key={index}
-          className="flex w-full h-max flex-col gap-3 rounded-sm border-2 border-brand-6 p-6 transition-transform duration-300 ease-out hover:scale-[1.03]"
-        >
-          <div className="flex flex-col gap-2">
-            <topic.icon variant="cyan" className="size-7.5" />
-            <h4 className="body-sm-bold md:subtitle-xs-bold">{topic.title}</h4>
-          </div>
-          <span className="body-xs text-muted-foreground">
-            {topic.description}
-          </span>
-        </li>
+          icon={topic.icon}
+          title={topic.title}
+          description={topic.description}
+          index={index}
+        />
       ))}
     </ul>
   )

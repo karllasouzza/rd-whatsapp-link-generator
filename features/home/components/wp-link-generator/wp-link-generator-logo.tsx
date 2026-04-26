@@ -9,7 +9,7 @@ export function WpLinkGeneratorLogo() {
         fill
         className="object-contain"
         sizes="(max-width: 767px) 97px, (max-width: 1376px) 174px, (max-width: 1685px) 239px, 342px"
-        priority
+        preload={true}
       />
     </figure>
   )
