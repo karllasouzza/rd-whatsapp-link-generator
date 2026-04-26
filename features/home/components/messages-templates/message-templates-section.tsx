@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRightIcon } from "@/components/ui/icons/arrow-right-icon"
 
 import { MessagesTemplatesList } from "./message-templates-list"
 
@@ -18,7 +18,7 @@ export function MessagesTemplatesSection() {
         <Button asChild size="default" className="mx-auto w-max">
           <a href="#wp-link-generator">
             Gere seu link grátis
-            <ArrowRight className="size-4 stroke-2" />
+            <ArrowRightIcon size={16} />
           </a>
         </Button>
       </div>

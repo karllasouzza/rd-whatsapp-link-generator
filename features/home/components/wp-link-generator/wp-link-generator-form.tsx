@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { ArrowRight, Loader2 } from "lucide-react"
+import { ArrowRightIcon } from "@/components/ui/icons/arrow-right-icon"
+import { LoaderIcon } from "@/components/ui/icons/loader-icon"
 
 import { useWpLinkGeneratorForm } from "../../hooks/use-wp-link-generator-form"
 import { WpLinkGeneratorRoleSelect } from "./wp-link-generator-role-select"
@@ -174,13 +175,13 @@ export function WpLinkGeneratorForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="size-4 animate-spin" />
+            <LoaderIcon size={16} className="animate-spin" />
             Gerando...
           </>
         ) : (
           <>
             Gerar link grátis
-            <ArrowRight className="size-4" />
+            <ArrowRightIcon size={16} />
           </>
         )}
       </Button>

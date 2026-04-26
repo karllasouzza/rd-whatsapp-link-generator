@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import { ChevronsUp } from "lucide-react"
+import { ChevronUpIcon } from "@/components/ui/icons/chevron-up-icon"
 
 import { ALL_FAQ_ITEMS_IDS } from "./faq-accordion"
 import { FaqContent } from "./faq-content"
@@ -31,8 +31,9 @@ export function FaqSection() {
           onClick={toggleAllAccordion}
         >
           {isAllFaqItemsOpened ? "Fechar todos" : "Abrir todos"}
-          <ChevronsUp
-            className={`size-4 text-foreground transition-transform duration-300 ${
+          <ChevronUpIcon
+            size={16}
+            className={`text-foreground transition-transform duration-300 ${
               isAllFaqItemsOpened ? "" : "rotate-180"
             }`}
           />

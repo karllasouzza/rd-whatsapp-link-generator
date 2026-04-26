@@ -2,7 +2,7 @@ import { BenefitsIntro } from "./benefits-intro"
 import { BenefitsList } from "./benefits-list"
 import { TextHighlight } from "@/components/ui/text-highlight"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRightIcon } from "@/components/ui/icons/arrow-right-icon"
 
 export function BenefitsSection() {
   return (
@@ -28,7 +28,7 @@ export function BenefitsSection() {
         <Button asChild size="default" className="w-max">
           <a href="#wp-link-generator">
             Gere seu link grátis
-            <ArrowRight className="size-4" />
+            <ArrowRightIcon size={16} />
           </a>
         </Button>
       </div>
