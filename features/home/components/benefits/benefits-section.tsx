@@ -8,32 +8,30 @@ export function BenefitsSection() {
   return (
     <section
       id="benefits"
-      className="flex w-full items-center justify-center overflow-hidden bg-background"
+      className="mx-auto flex w-full max-w-7xl flex-col gap-10 bg-background px-6 py-14 md:px-12 lg:flex-row lg:items-start lg:px-20"
     >
-      <main className="flex max-w-300 flex-col gap-10 px-6 py-14 md:px-12 lg:flex-row lg:items-start lg:px-20">
-        <header className="flex h-max w-full">
-          <h3 className="heading-md md:heading-xl text-left text-foreground">
-            Acelere suas conversas com o{" "}
-            <TextHighlight nowrap variant="cyan">
-              Gerador de link de
-            </TextHighlight>{" "}
-            <TextHighlight variant="lime">WhatsApp</TextHighlight>
-          </h3>
-        </header>
+      <header className="flex h-max w-full">
+        <h2 className="text-left heading-md text-foreground md:heading-xl">
+          Acelere suas conversas com o{" "}
+          <TextHighlight nowrap variant="cyan">
+            Gerador de link de
+          </TextHighlight>{" "}
+          <TextHighlight variant="lime">WhatsApp</TextHighlight>
+        </h2>
+      </header>
 
-        <section className="flex w-full flex-col gap-6">
-          <BenefitsIntro />
+      <div className="flex w-full flex-col gap-6">
+        <BenefitsIntro />
 
-          <BenefitsList />
+        <BenefitsList />
 
-          <Button asChild size="default" className="w-max">
-            <a href="#wp-link-generator">
-              Gere seu link grátis
-              <ArrowRight className="size-4" />
-            </a>
-          </Button>
-        </section>
-      </main>
+        <Button asChild size="default" className="w-max">
+          <a href="#wp-link-generator">
+            Gere seu link grátis
+            <ArrowRight className="size-4" />
+          </a>
+        </Button>
+      </div>
     </section>
   )
 }

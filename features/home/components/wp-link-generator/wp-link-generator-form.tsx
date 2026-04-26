@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Loader2 } from "lucide-react"
 
 import { useWpLinkGeneratorForm } from "../../hooks/use-wp-link-generator-form"
 import { WpLinkGeneratorRoleSelect } from "./wp-link-generator-role-select"
@@ -22,7 +22,7 @@ export function WpLinkGeneratorForm() {
       noValidate
       className="flex w-full flex-col items-center justify-center gap-8 **:z-20"
     >
-      <section className="grid w-full grid-flow-row grid-cols-2 gap-6">
+      <div className="grid w-full grid-flow-row grid-cols-2 gap-6">
         {/* WhatsApp Number */}
         <fieldset className="col-start-1 col-end-3 flex w-full flex-col gap-2 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-2">
           <Label
@@ -79,7 +79,7 @@ export function WpLinkGeneratorForm() {
               <Input
                 id="name"
                 type="text"
-                placeholder="Nome"
+                placeholder="Luna"
                 value={field.value}
                 onChange={field.onChange}
                 onBlur={field.onBlur}
@@ -159,7 +159,7 @@ export function WpLinkGeneratorForm() {
             {submitError}
           </p>
         )}
-      </section>
+      </div>
 
       {/* Privacy Policy */}
       <WpLinkGeneratorPrivacyPolicy />
@@ -172,8 +172,17 @@ export function WpLinkGeneratorForm() {
         className="col-start-1 col-end-3 m-0 mx-auto w-max border-0 ring-0"
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Gerando..." : "Gerar link grátis"}
-        <ArrowRight className="size-4" />
+        {isSubmitting ? (
+          <>
+            <Loader2 className="size-4 animate-spin" />
+            Gerando...
+          </>
+        ) : (
+          <>
+            Gerar link grátis
+            <ArrowRight className="size-4" />
+          </>
+        )}
       </Button>
     </form>
   )

@@ -29,7 +29,7 @@ export function MediaTopicsList() {
       {TOPICS.map((topic, index) => (
         <li
           key={index}
-          className="flex w-full h-max flex-col gap-3 rounded-sm border-2 border-brand-6 p-6"
+          className="flex w-full h-max flex-col gap-3 rounded-sm border-2 border-brand-6 p-6 transition-transform duration-300 ease-out hover:scale-[1.03]"
         >
           <div className="flex flex-col gap-2">
             <topic.icon variant="cyan" className="size-7.5" />

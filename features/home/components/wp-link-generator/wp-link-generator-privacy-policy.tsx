@@ -1,11 +1,11 @@
 export function WpLinkGeneratorPrivacyPolicy() {
   return (
-    <aside className="col-start-1 col-end-3 flex flex-col items-center">
-      <p className="caption text-center text-foreground">
+    <div className="col-start-1 col-end-3 flex flex-col items-center">
+      <p className="text-center caption text-foreground">
         Ao preencher o formulário, concordo * em receber comunicações de acordo
         com meus interesses.
       </p>
-      <p className="caption text-center text-foreground">
+      <p className="text-center caption text-foreground">
         Ao informar meus dados, eu concordo com a{" "}
         <a
           href="https://legal.rdstation.com/pt/privacy-policy/"
@@ -16,9 +16,9 @@ export function WpLinkGeneratorPrivacyPolicy() {
           Política de Privacidade
         </a>
       </p>
-      <p className="caption text-center text-foreground">
+      <p className="text-center caption text-foreground">
         * Você pode alterar suas permissões de comunicação a qualquer tempo.
       </p>
-    </aside>
+    </div>
   )
 }

@@ -1,6 +1,7 @@
 "use client"
 
-import * as React from "react"
+import { useState } from "react"
+
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronsDown, ChevronsUp } from "lucide-react"
 
 const FAQ_ITEMS = [
   {
@@ -40,62 +41,63 @@ const FAQ_ITEMS = [
 const ALL_FAQ_ITEMS_IDS = FAQ_ITEMS.map((item) => item.id)
 
 export function FaqSection() {
-  const [openItems, setOpenItems] = React.useState<string[]>(ALL_FAQ_ITEMS_IDS)
+  const [openItems, setOpenItems] = useState<string[]>(ALL_FAQ_ITEMS_IDS)
 
-  const allValues = FAQ_ITEMS.map((item) => item.id)
-  const allOpen = openItems.length === allValues.length
+  const isAllFaqItemsOpened = openItems.length === ALL_FAQ_ITEMS_IDS.length
 
   function toggleAllAccordion() {
-    if (allOpen) {
+    if (isAllFaqItemsOpened) {
       setOpenItems([])
     } else {
-      setOpenItems(allValues)
+      setOpenItems(ALL_FAQ_ITEMS_IDS)
     }
   }
 
   return (
     <section id="faq" className="flex w-full items-center justify-center">
-      <main className="flex w-full max-w-300 flex-col gap-10 px-6 py-20 md:px-12 lg:px-20">
-        <header className="flex w-full flex-col gap-4">
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-max shrink-0 self-end"
-            onClick={toggleAllAccordion}
-          >
-            {allOpen ? "Fechar todos" : "Abrir todos"}
-            {allOpen ? (
-              <ChevronUp className="size-4 text-foreground" />
-            ) : (
-              <ChevronDown className="size-4 text-foreground" />
-            )}
-          </Button>
-
-          <h1 className="text-center heading-base text-foreground">
-            Perguntas mais comuns
-          </h1>
-        </header>
-
-        <Accordion
-          type="multiple"
-          value={openItems}
-          onValueChange={setOpenItems}
-          className="flex w-full flex-col"
+      <div className="flex w-full max-w-7xl flex-col gap-4 px-6 py-20 md:px-12 lg:px-20">
+        <Button
+          variant="outline"
+          size="sm"
+          className="w-max shrink-0 self-end"
+          onClick={toggleAllAccordion}
         >
-          {FAQ_ITEMS.map((item) => (
-            <AccordionItem
-              key={item.id}
-              value={item.id}
-              className="w-full border-brand-5 py-6"
-            >
-              <AccordionTrigger>{item.question}</AccordionTrigger>
-              <AccordionContent className="pr-11 text-left text-foreground">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </main>
+          {isAllFaqItemsOpened ? "Fechar todos" : "Abrir todos"}
+          {isAllFaqItemsOpened ? (
+            <ChevronsUp className="size-4 text-foreground" />
+          ) : (
+            <ChevronsDown className="size-4 text-foreground" />
+          )}
+        </Button>
+
+        <div className="flex flex-col gap-10 lg:flex-row">
+          <aside className="w-max">
+          <h3 className="text-left heading-base whitespace-nowrap text-nowrap text-foreground">
+            Perguntas mais comuns
+          </h3>
+          </aside>
+
+          <Accordion
+            type="multiple"
+            value={openItems}
+            onValueChange={setOpenItems}
+            className="flex w-full flex-col"
+          >
+            {FAQ_ITEMS.map((item) => (
+              <AccordionItem
+                key={item.id}
+                value={item.id}
+                className="w-full border-brand-5 py-6"
+              >
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent className="pr-11 text-left text-foreground">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
     </section>
   )
 }

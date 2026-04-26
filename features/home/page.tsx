@@ -1,13 +1,41 @@
-import { BenefitsSection } from "./components/benefits/benefits-section"
-import { MessagesTemplatesSection } from "./components/messages-templates/message-templates-section"
-import { FaqSection } from "./components/faq-section"
+import dynamic from "next/dynamic"
 import { WpLinkGeneratorSection } from "./components/wp-link-generator/wp-link-generator-section"
-import { HowToCreateMessageSection } from "./components/how-to-create-message/how-to-create-message-section"
-import { MediaTopicsSection } from "./components/media-topics/media-topics-section"
+
+const BenefitsSection = dynamic(
+  () =>
+    import("./components/benefits/benefits-section").then(
+      (mod) => mod.BenefitsSection
+    )
+)
+
+const MediaTopicsSection = dynamic(
+  () =>
+    import("./components/media-topics/media-topics-section").then(
+      (mod) => mod.MediaTopicsSection
+    )
+)
+
+const HowToCreateMessageSection = dynamic(
+  () =>
+    import("./components/how-to-create-message/how-to-create-message-section").then(
+      (mod) => mod.HowToCreateMessageSection
+    )
+)
+
+const MessagesTemplatesSection = dynamic(
+  () =>
+    import("./components/messages-templates/message-templates-section").then(
+      (mod) => mod.MessagesTemplatesSection
+    )
+)
+
+const FaqSection = dynamic(
+  () => import("./components/faq-section").then((mod) => mod.FaqSection)
+)
 
 export function HomePage() {
   return (
-    <main className="box-border flex w-full flex-1 flex-col overflow-hidden">
+    <div className="box-border flex w-full flex-1 flex-col overflow-hidden">
       {/* Hero Banner */}
       <WpLinkGeneratorSection />
 
@@ -24,6 +52,6 @@ export function HomePage() {
 
       {/* FAQ */}
       <FaqSection />
-    </main>
+    </div>
   )
 }

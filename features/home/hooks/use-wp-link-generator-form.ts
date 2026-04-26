@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { toast } from "sonner"
 
 import { formSchema, type FormData } from "../lib/form-schema"
 import type { Role } from "../types/roles"
@@ -39,33 +40,38 @@ export function useWpLinkGeneratorForm() {
     }
   }, [whatsappValue])
 
-  const generateLink = useCallback(
-    async (data: FormData): Promise<void> => {
-      setSubmitError(null)
-      setIsSubmitting(true)
+  const generateLink = useCallback(async (data: FormData): Promise<void> => {
+    setSubmitError(null)
+    setIsSubmitting(true)
 
-      try {
-        useLinkStore.getState().generateLink(phoneMask.rawDigits, data.message ?? "")
+    try {
+      const submitResult = await submitWpLinkGeneratorFormService(data)
 
-        const submitResult = await submitWpLinkGeneratorFormService(data)
-
-        if (!submitResult.success) {
-          setSubmitError(
-            submitResult.error ?? "Erro ao enviar formulário. Tente novamente."
-          )
-        }
-
-        router.push("/success")
+      if (!submitResult.success) {
+        const errorMsg =
+          submitResult.error ?? "Erro ao enviar formulário. Tente novamente."
+        setSubmitError(errorMsg)
+        toast.error(errorMsg)
+        form.setError("root", { message: errorMsg })
         return
-      } catch {
-        setSubmitError("Ocorreu um erro inesperado. Tente novamente.")
-        return
-      } finally {
-        setIsSubmitting(false)
       }
-    },
-    []
-  )
+
+      useLinkStore
+        .getState()
+        .generateLink(phoneMask.rawDigits, data.message ?? "")
+      toast.success("Link gerado com sucesso!")
+      router.push("/success")
+      return
+    } catch {
+      const errorMsg = "Ocorreu um erro inesperado. Tente novamente."
+      setSubmitError(errorMsg)
+      toast.error(errorMsg)
+      form.setError("root", { message: errorMsg })
+      return
+    } finally {
+      setIsSubmitting(false)
+    }
+  }, [])
 
   const resetForm = useCallback(() => {
     form.reset()

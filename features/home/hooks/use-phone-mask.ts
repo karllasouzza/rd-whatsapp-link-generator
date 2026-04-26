@@ -3,7 +3,13 @@
 import { useState, useCallback } from "react"
 
 function applyPhoneMask(digits: string): string {
-  if (digits.length <= 9) return digits
+  if (digits.length === 0) return ""
+  if (digits.length <= 3) return digits
+  if (digits.length <= 7) {
+    const prefix = digits.slice(0, 4)
+    const suffix = digits.slice(4)
+    return suffix ? `${prefix}-${suffix}` : prefix
+  }
   if (digits.length <= 10)
     return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`

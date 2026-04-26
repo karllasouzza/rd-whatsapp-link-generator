@@ -61,13 +61,11 @@ export default function RootLayout({
     >
       <body className="flex flex-1 overflow-y-auto">
         <ThemeProvider>
-          <section className="flex w-screen flex-1 flex-col">
+          <div className="flex w-screen flex-1 flex-col">
             <Header />
-            <main className="h-max w-screen flex-1 ">
-              {children}
-            </main>
+            <main className="h-max w-screen flex-1">{children}</main>
             <Footer />
-          </section>
+          </div>
           <Toaster richColors position="top-center" />
         </ThemeProvider>
       </body>
