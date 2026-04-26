@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import { Toaster } from "sonner"
 import { ThemeProvider } from "@/components/shared/theme-provider"
 import { cn } from "@/lib/utils"
 import { fontHeading, fontSans, fontSubtitle } from "@/lib/fonts"
@@ -58,7 +59,7 @@ export default function RootLayout({
         fontSubtitle.variable
       )}
     >
-      <body className="flex flex-1 h-screen overflow-hidden overflow-y-auto">
+      <body className="flex flex-1 overflow-y-auto">
         <ThemeProvider>
           <section className="flex w-screen flex-1 flex-col">
             <Header />
@@ -67,6 +68,7 @@ export default function RootLayout({
             </main>
             <Footer />
           </section>
+          <Toaster richColors position="top-center" />
         </ThemeProvider>
       </body>
     </html>

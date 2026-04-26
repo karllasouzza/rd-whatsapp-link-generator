@@ -223,6 +223,47 @@
   font-weight: 400;
 }
 
+@keyframes shake-logo {
+  0%,
+  100% {
+    transform: rotate(-12.76deg);
+  }
+  20% {
+    transform: rotate(-13.1deg);
+  }
+  40% {
+    transform: rotate(-12.4deg);
+  }
+  60% {
+    transform: rotate(-13deg);
+  }
+  80% {
+    transform: rotate(-12.5deg);
+  }
+}
+
+@keyframes highlight-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@utility animate-shake-logo {
+  animation: shake-logo 2.5s ease-in-out infinite;
+}
+
+.text-highlight-enter::before {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.text-highlight-enter.animate::before {
+  animation: highlight-in 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -232,5 +273,6 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
   }
 }
