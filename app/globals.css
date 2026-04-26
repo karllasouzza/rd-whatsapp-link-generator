@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   /* breakpoints */
   --breakpoint-sm: 375px;
@@ -86,27 +84,7 @@
   --radius: 0.75rem;
 }
 
-.dark {
-  --background: oklch(18.5% 0.035 230);
-  --foreground: oklch(96.4% 0.003 264.5);
-  --card: oklch(22.5% 0.04 232);
-  --card-foreground: oklch(96.4% 0.003 264.5);
-  --popover: oklch(22.5% 0.04 232);
-  --popover-foreground: oklch(96.4% 0.003 264.5);
-  --primary: oklch(80.4% 0.146 219.5);
-  --primary-foreground: oklch(18.5% 0.035 230);
-  --secondary: oklch(27.3% 0.045 224.7);
-  --secondary-foreground: oklch(96.4% 0.003 264.5);
-  --muted: oklch(27.3% 0.045 224.7);
-  --muted-foreground: oklch(65% 0.025 250);
-  --accent: oklch(90.5% 0.216 123.9);
-  --accent-foreground: oklch(18.5% 0.035 230);
-  --destructive: oklch(57.7% 0.245 27.3);
-  --destructive-foreground: oklch(100% 0 0);
-  --border: oklch(30% 0.03 232);
-  --input: oklch(30% 0.03 232);
-  --ring: oklch(80.4% 0.146 219.5);
-}
+
 
 @utility heading-xl {
   font-family: var(--font-heading);

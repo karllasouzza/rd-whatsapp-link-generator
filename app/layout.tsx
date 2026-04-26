@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import Script from "next/script"
 import { Toaster } from "sonner"
 
-import { ThemeProvider } from "@/components/shared/theme-provider"
 import { fontHeading, fontSans, fontSubtitle } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import "./globals.css"
@@ -52,7 +51,6 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      suppressHydrationWarning
       className={cn(
         "flex flex-1",
         "antialiased",
@@ -67,10 +65,8 @@ export default function RootLayout({
           src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/f27fe8ea-077c-495c-ba90-3765efbb4c3d-loader.js"
           async
         />
-        <ThemeProvider>
-          {children}
-          <Toaster richColors position="top-center" />
-        </ThemeProvider>
+        {children}
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   )
