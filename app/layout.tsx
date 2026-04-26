@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Toaster } from "sonner"
 
 import { ThemeProvider } from "@/components/shared/theme-provider"
@@ -62,6 +63,11 @@ export default function RootLayout({
       )}
     >
       <body className="flex flex-1">
+        <Script
+          src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/f27fe8ea-077c-495c-ba90-3765efbb4c3d-loader.js"
+          strategy="afterInteractive"
+          async
+        />
         <ThemeProvider>
           {children}
           <Toaster richColors position="top-center" />
