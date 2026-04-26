@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
-import { useForm, type FieldErrors } from "react-hook-form"
+import { useForm, useWatch, type FieldErrors } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
 
@@ -32,7 +32,7 @@ export function useWpLinkGeneratorForm() {
   })
 
   // Sync phone mask with form field
-  const whatsappValue = form.watch("whatsapp")
+  const whatsappValue = useWatch({ control: form.control, name: "whatsapp" })
   useEffect(() => {
     if (whatsappValue !== phoneMask.maskedValue) {
       const digits = (whatsappValue || "").replace(/\D/g, "")
@@ -74,7 +74,7 @@ export function useWpLinkGeneratorForm() {
         setIsSubmitting(false)
       }
     },
-    [phoneMask, router]
+    [phoneMask, router, form]
   )
 
   const onInvalid = useCallback(

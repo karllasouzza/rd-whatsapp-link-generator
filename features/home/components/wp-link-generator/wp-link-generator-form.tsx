@@ -14,8 +14,14 @@ import { WpLinkGeneratorRoleSelect } from "./wp-link-generator-role-select"
 import { WpLinkGeneratorPrivacyPolicy } from "./wp-link-generator-privacy-policy"
 
 export function WpLinkGeneratorForm() {
-  const { form, generateLink, isSubmitting, submitError, onInvalid, phoneMask } =
-    useWpLinkGeneratorForm()
+  const {
+    form,
+    generateLink,
+    isSubmitting,
+    submitError,
+    onInvalid,
+    phoneMask,
+  } = useWpLinkGeneratorForm()
 
   return (
     <form
@@ -80,7 +86,7 @@ export function WpLinkGeneratorForm() {
               <Input
                 id="name"
                 type="text"
-                placeholder="Luna"
+                placeholder="Nome do contato"
                 value={field.value}
                 onChange={field.onChange}
                 onBlur={field.onBlur}

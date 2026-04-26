@@ -6,7 +6,7 @@ export function HowToCreateMessageSection() {
       id="how-to-create-message"
       className="flex w-full items-center justify-center bg-background px-6 py-18 md:px-12 lg:px-20"
     >
-      <div className="flex w-full max-w-300 flex-col gap-10">
+      <div className="flex w-full max-w-265.5 flex-col gap-10">
         <header className="flex flex-col gap-2">
           <h3 className="heading-sm text-center text-foreground">
             Como criar mensagens automáticas para o WhatsApp

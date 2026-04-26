@@ -21,7 +21,7 @@ export function CopyFormattedLinkSectionContent() {
         readOnly
         value={link}
         placeholder="Link copiado para a área de transferência"
-        className="resize-none border-border"
+        className="resize-none border-border border-2 h-max"
       />
 
       <div

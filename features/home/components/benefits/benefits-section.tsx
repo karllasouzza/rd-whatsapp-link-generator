@@ -8,7 +8,7 @@ export function BenefitsSection() {
   return (
     <section
       id="benefits"
-      className="mx-auto flex w-full max-w-7xl flex-col gap-10 bg-background px-6 py-14 md:px-12 lg:flex-row lg:items-start lg:px-20"
+      className="mx-auto flex w-full max-w-362 flex-col gap-10 bg-background px-6 py-14 md:px-12 lg:flex-row lg:items-start lg:px-20"
     >
       <header className="flex h-max w-full">
         <h2 className="text-left heading-md text-foreground md:heading-xl">

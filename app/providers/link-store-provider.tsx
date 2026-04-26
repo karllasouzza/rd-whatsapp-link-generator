@@ -7,14 +7,11 @@ export function LinkStoreProvider({ children }: { children: ReactNode }) {
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
+    setHydrated(useLinkStore.persist.hasHydrated())
+
     const unsub = useLinkStore.persist.onFinishHydration(() => {
       setHydrated(true)
     })
-
-    // If already hydrated before effect runs
-    if (useLinkStore.persist.hasHydrated()) {
-      setHydrated(true)
-    }
 
     return unsub
   }, [])

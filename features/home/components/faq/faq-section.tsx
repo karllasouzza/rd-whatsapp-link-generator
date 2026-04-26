@@ -23,7 +23,7 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="flex w-full items-center justify-center">
-      <div className="flex w-full max-w-7xl flex-col gap-4 px-6 py-20 md:px-12 lg:px-20">
+      <div className="flex w-full max-w-362 flex-col gap-4 px-6 py-20 md:px-12 lg:px-20">
         <Button
           variant="outline"
           size="sm"
