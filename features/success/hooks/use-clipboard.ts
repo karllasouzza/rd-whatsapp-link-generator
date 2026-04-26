@@ -27,7 +27,7 @@ export function useClipboard() {
 
       timeoutRef.current = setTimeout(() => {
         setCopied(false)
-      }, 2000)
+      }, 5000)
     } catch (err) {
       const message =
         err instanceof Error ? err.message : "Falha ao copiar para a área de transferência"
