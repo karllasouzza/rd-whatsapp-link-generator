@@ -52,7 +52,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-.bg-form-gradient {
+@utility bg-form-gradient {
   background:
     radial-gradient(
       29.71% 69.22% at 100% 43.65%,
@@ -63,14 +63,18 @@
     #f1f3f5;
 }
 
-.bg-form-gradient-inverted {
-  background: radial-gradient(
-      29.71% 69.22% at 100% 43.65%,
+@utility bg-form-gradient-invert {
+  background-color: #f1f3f5;
+  background-image:
+    /* Ciano (paint1) — 20% opacidade, vindo da direita */
+    radial-gradient(
+      ellipse 30% 70% at 100% 43.6%,
       rgba(110, 247, 251, 0.2) 0%,
       rgba(241, 243, 245, 0.2) 100%
-    )
-    radial-gradient(31.29% 53.63% at 0% 65.34%, #d1f7d8 0%, #f1f3f5 100%)
-    #f1f3f5;
+    ),
+    /* Verde menta (paint0) — vindo da esquerda */
+      radial-gradient(ellipse 31% 54% at 0% 65.3%, #d1f7d8 0%, #f1f3f5 100%);
+  background-repeat: no-repeat;
 }
 
 :root {

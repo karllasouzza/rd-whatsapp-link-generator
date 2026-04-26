@@ -4,7 +4,7 @@ import { ChevronRightIcon } from "@/components/ui/icons/chevron-right-icon"
 
 export function CopyFormattedLinkPromoCard() {
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-brand-6 bg-white p-6">
+    <div className="flex flex-col gap-4 rounded-2xl border border-brand-6 bg-white p-6 transition-all duration-300 ease-out hover:shadow-lg">
       <h2 className="heading-xs text-brand-2">
         Quer aumentar em até 56% as suas vendas pelo WhatsApp?
       </h2>
@@ -21,7 +21,7 @@ export function CopyFormattedLinkPromoCard() {
         href="https://www.rdstation.com/produtos/conversas/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-max items-center gap-1 lg:gap2 text-link transition-opacity hover:opacity-80 lg:body-md-bold"
+        className="lg:gap2 flex w-max items-center gap-1 text-link transition-opacity hover:opacity-80 lg:body-md-bold"
       >
         <p className="block body-sm lg:hidden">
           Conheça o RD Station Conversas
