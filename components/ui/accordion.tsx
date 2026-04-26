@@ -4,7 +4,7 @@ import * as React from "react"
 import { Accordion as AccordionPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
-import { CaretDownIcon } from "@/components/ui/icons/caret-down-icon"
+import { ChevronUpIcon } from "./icons/chevron-up-icon"
 
 function Accordion({
   className,
@@ -49,7 +49,7 @@ function AccordionTrigger({
       >
         <span>{children}</span>
 
-        <CaretDownIcon
+        <ChevronUpIcon
           data-slot="accordion-trigger-icon"
           size={20}
           className="pointer-events-none shrink-0 transition-transform duration-300 group-aria-expanded/accordion-trigger:rotate-180"
